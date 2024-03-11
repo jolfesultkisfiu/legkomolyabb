@@ -6,6 +6,7 @@
 }
 
 /*Navbar*/
+.dropdown-panel{display: none;}
 
 .nav-container {
     background-color: rgb(16, 42, 118);
@@ -17,7 +18,7 @@
 
 .nav-container li {
 
-    padding: 25px;
+    padding: 25px 10px;
     margin: 0px 5px;
 }
 
@@ -26,7 +27,9 @@
     color:whitesmoke;
     padding: 25px;
     font-size: 1.06rem;
+    font-weight: 500;
 
+    
 
 }
 .nav-container li:hover{
@@ -89,8 +92,80 @@
 /*responsivity*/
 
 @media (max-width:1000px) {
-    .nav-container li:not(:first-of-type){
+    .nav-container>li:not(:first-of-type){
         display: none;
+    }
+   
+
+    .dropdown-menu div {
+        width: 28px;
+        height: 4.6px;
+        background-color: whitesmoke;
+        margin: 6px 0;
+    }
+    .dropdown-menu {
+        float:right;
+        margin:auto 5vw auto auto;
+        display: block;
+        padding: 15px 25px;
+    }
+    .dropdown-menu:hover{
+        background-color: royalblue;
+        
+    }
+    .dropdown-panel {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-items: center;
+        background-color: rgba(52, 98, 236, 0.8);
+        width: 100vw;
+        height: 0vh;
+        animation: comein 1s forwards;
+    }
+    .dropdown-panel a{
+        padding: 25px 100vw;
+        
+    }
+    .dropdown-panel li {
+        display: block;
+    }
+    #panelSearchBar {
+        display: none;
+    }
+    .search-box{
+        width: 44vw;
+    }
+   
+}
+@keyframes goout {
+    from {
+        height: 100vh;
+    }
+    to{
+        height: 0;
     }
 }
 
+
+@media (max-width:640px) {
+    .nav-container>.search-bar-container{
+        display: none;
+    }
+    #panelSearchBar {
+        margin-left: 25vw;
+        display: block;
+        animation: comein 0.3s forwards;
+        
+    }
+}
+@keyframes comein {
+    from {
+        height:0;
+        display: none;
+    }
+    to {
+        height: 100vh;
+        display: block;
+    }
+}

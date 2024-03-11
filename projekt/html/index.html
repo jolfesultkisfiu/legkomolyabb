@@ -11,8 +11,8 @@
             <nav>
                 <ul class="nav-container">
                     <li><a href="#Home">Home</a></li>
-                    <li><a href="#Upcoming Events">Home</a></li>
-                    <li><a href="#Contact Us">Home</a></li>
+                    <li><a href="#Upcoming Events">Upcoming Events</a></li>
+                    <li><a href="#Contact Us">Create Event</a></li>
                     <div class="search-bar-container">
                         <div class="search-bar">   
                             <div class="search-icon"></div>
@@ -28,11 +28,43 @@
 
                     <li><a href="#Loginpage">Log In</a></li>
                     <li><a href="#registerpage">Register</a></li>
+
+                    <div class="dropdown-menu" id="dropdownHamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="dropdown-panel" id="dropdownPanelId">
+                        <ul class="dropdown-panel-list">
+                            <li><a href="#Upcoming Events">Upcoming Events</a></li>
+                            <li><a href="#Contact Us">Create Event</a></li>
+                           
+                         
+        
+                            <li><a href="#Loginpage">Log In</a></li>
+                            <li><a href="#registerpage">Register</a></li>
+
+                            <div class="search-bar-container" id="panelSearchBar">
+                                <div class="search-bar">   
+                                    <!--<div class="search-icon"></div>-->
+                                    <form action="../php/search.php" method="post" class="search-form">
+                                        <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                        <button  class="search-button" type="submit" value="Search">Search</button> 
+            
+                                    </form>
+                                  
+                                </div>
+                            </div>
+                        </ul>
+                       
+                    </div>
                 </ul>
+
             </nav>
         </header>
         <main>
 
+            <script src="../js/paneldisplay.js"></script>
         </main>
         <footer>
             
