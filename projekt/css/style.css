@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*Navbar*/
@@ -103,6 +104,7 @@
     }
 }
 @media (max-width:1080px) {
+   
     .nav-container>li:not(:first-of-type){
         display: none;
     }
@@ -152,7 +154,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         justify-items: flex-end;
-       
+        
     }
    .dropdown-panel li a {
     padding: 1rem 1rem 1rem 90%;
@@ -165,22 +167,13 @@
    .dropdown-panel li {
     padding:1.6rem 0px;
    }
+    .dropdown-panel {
+        display: none;
+    }
    
    
 }
 
-@media (max-width:400px) {
-    .dropdown-panel li a {
-    
-        padding: 0.3rem 1rem 0.3rem auto;
-        margin-right: 0;
-        display: block;
-        float:right;
-       }
-       .dropdown-panel li {
-        padding: 1.6rem 0px;
-       }
-}
 @keyframes goout {
     from {
         height: 100vh;
@@ -195,6 +188,14 @@
     .nav-container>.search-bar-container{
         display: none;
     }
+
+    .dropdown-panel-list {
+        display: flex;
+        justify-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+   
     #panelSearchBar {
         margin-left: 25vw;
         display: block;
@@ -203,8 +204,41 @@
     }
     #panelSearchBar {
         margin-left: 0;
-        /*itt hagytuk abba*/
+        
     }
+    .search-bar-container {
+        height: 3rem;
+    }
+  
+    .search-box {
+        width: 80vw;
+        margin: 0;
+        height: 2.6rem;         
+    }
+  
+    .search-button{
+        width: 20vw;
+        border-radius: 0;
+        margin: 0;
+        height: 2.62rem;
+        float:right;
+        background-color: rgb(147, 183, 222);
+        background-image: url('../images/searchicon.png');
+        background-blend-mode: darken;
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position-x: center;
+    }
+    .search-button:hover{
+        background-color: rgb(158, 204, 244);
+        transition: 0.2s;
+    }
+
+    .dropdown-panel li a {
+    
+        width: 34vw;
+        text-align: right;  
+       }
    
 }
 @keyframes comein {
@@ -215,5 +249,32 @@
     100% {
         max-height: 500px;
         
+    }
+}
+
+
+
+
+@media (max-width:400px) {
+    .dropdown-panel li a {
+    
+        padding: 0.3rem auto 0.3rem auto;
+        margin-right: 0;
+        display: block;
+        text-align: center;
+        width: 100vw;
+       }
+       .dropdown-panel li {
+        padding: 1.6rem 0px;
+       }
+       .search-box {
+        width: 67vw;
+        margin: 0;
+    }
+    .search-button{
+        width: 33vw;
+        border-radius: 0;
+        margin: 0;
+        float:right;
     }
 }
