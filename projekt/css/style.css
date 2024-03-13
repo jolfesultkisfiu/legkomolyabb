@@ -11,6 +11,11 @@
     
     display: none; height: 0;
     max-height: 0;
+    
+}
+
+.dropdown-panel.closed {
+    animation: goout 1s forwards;
 }
 
 .nav-container {
@@ -25,6 +30,7 @@
 
     padding: 25px 10px;
     margin: 0px 5px;
+    transition: 0.56s;
 }
 
 .nav-container li a {
@@ -33,12 +39,13 @@
     padding: 25px;
     font-size: 1.06rem;
     font-weight: 500;
-
+  
     
 
 }
 .nav-container li:hover{
     background-color: royalblue;
+    transition: 0.56s;
 }
 
 .search-bar-container {
@@ -115,15 +122,18 @@
         height: 4.6px;
         background-color: whitesmoke;
         margin: 6px 0;
+       
     }
     .dropdown-menu { /*hamburger icon container*/
         float:right;
         margin:auto 5vw auto auto;
         display: block;
         padding: 15px 25px;
+        transition: 0.56s;
     }
     .dropdown-menu:hover{
         background-color: royalblue;
+        transition: 0.56s;
         
     }
     .dropdown-panel {
@@ -150,10 +160,11 @@
         width: 44vw;
     }
     .dropdown-panel-list {
-        display: inherit;
+        display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-items: flex-end;
+        overflow:hidden;
         
     }
    .dropdown-panel li a {
@@ -174,37 +185,34 @@
    
 }
 
-@keyframes goout {
-    from {
-        height: 100vh;
-    }
-    to{
-        height: 0;
-    }
-}
-
 
 @media (max-width:640px) {
     .nav-container>.search-bar-container{
         display: none;
     }
-
+   
     .dropdown-panel-list {
         display: flex;
-        justify-items: center;
-        flex-wrap: wrap;
         flex-direction: column;
+        flex-wrap: nowrap;
+        justify-items: flex-end;
+        overflow:hidden;
     }
-   
+    .dropdown-panel-list li:first-of-type{
+        height: auto;
+        margin-top: 1.6rem;
+    }
     #panelSearchBar {
         margin-left: 25vw;
-        display: block;
-        animation: comein 0.3s forwards;
+        display: flex;
+        
         
     }
     #panelSearchBar {
         margin-left: 0;
         
+        height: auto;
+       
     }
     .search-bar-container {
         height: 3rem;
@@ -228,6 +236,7 @@
         background-size: contain; 
         background-repeat: no-repeat;
         background-position-x: center;
+        transition: 0.4s;
     }
     .search-button:hover{
         background-color: rgb(158, 204, 244);
@@ -252,6 +261,16 @@
     }
 }
 
+@keyframes goout {
+    0% {
+       max-height:500px;
+        
+    }
+    100% {
+        max-height: 0px;
+        
+    }
+}
 
 
 

@@ -13,10 +13,14 @@ myDiv.addEventListener('click', function() {
   // specify the action to take when the div is clicked
 
   if(Panel.style.display === "flex"){
+    // experimental Panel.classList.add("closed");
+    
     Panel.style.display = "none";
   }
   else {
     Panel.style.display = "flex";
+    Panel.style.animation = "comein 1s forwards";
+    //Panel.classList.remove("closed");
   }
 
 });
