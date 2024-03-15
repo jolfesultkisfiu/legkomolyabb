@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Event advertising website. Create your own events, or attend other people's events">
+        <meta name="author" content="Gergo Toth, Robert Nagy">
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="notranslate">
+        <meta name="language" content="english">
+      
+        <meta property="og:title" content="Events">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="../images/brandimage.png">
+        <meta property="og:url" content="createevent.html">
+        <!--EXTRA OG TAGS-->
+        <meta property="og:description" content="Create your own events, or attend other people's events">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Events">
+        <meta charset="UTF-8">
+      
+        <link rel="stylesheet" href="../css/navbarstyle.css">
+        <link rel="stylesheet" href="../css/footerstyle.css">
+        <link rel="stylesheet" href="../css/createevent.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="nav-container">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#Upcoming Events">Upcoming Events</a></li>
+                    <li><a href="#Contact Us">Create Event</a></li>
+                    <div class="search-bar-container">
+                        <div class="search-bar">   
+                            <div class="search-icon"></div>
+                            <form action="../php/search.php" method="post" class="search-form">
+                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                <button  class="search-button" type="submit" value="Search">Search</button> 
+    
+                            </form>
+                          
+                        </div>
+                    </div>
+                 
+
+                    <li><a href="#Loginpage">Log In</a></li>
+                    <li><a href="#registerpage">Register</a></li>
+
+                    <div class="dropdown-menu" id="dropdownHamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="dropdown-panel" id="dropdownPanelId">
+                        <ul class="dropdown-panel-list" id="dropdownPanelList">
+                           
+                            <div class="search-bar-container" id="panelSearchBar">
+                                <div class="search-bar">   
+                                    <!--<div class="search-icon"></div>-->
+                                    <form action="../php/search.php" method="post" class="search-form">
+                                        <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                        <button  class="search-button" type="submit" value="Search"></button> 
+            
+                                    </form>
+                                  
+                                </div>
+                            </div>
+                            <li><a href="#Upcoming Events">Upcoming Events</a></li>
+                            <li><a href="createevent.html">Create Event</a></li>
+                           
+                         
+        
+                            <li><a href="#Loginpage">Log In</a></li>
+                            <li><a href="#registerpage">Register</a></li>
+
+                           
+                        </ul>
+                       
+                    </div>
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+             
+             <section id="event-creation-hero-section">
+            
+                <article class="event-creation-article">
+                    <h2>Create your event!</h2>
+                    <div class="event-creation-form-container">
+                        <form action="" method="post" id="eventCreationForm">
+
+                            <label for="eventTitle">Event Title:</label>
+                            <input type="text" name="eventTitle" id="eventTitle" maxlength="64" required placeholder="Example: George's birthday party">
+                            
+                            <label for="eventDetails">Event Details:</label>
+                            <textarea form="eventCreationForm" maxlength="2048" name="eventDetails" id="eventDetails" cols="50" rows="7" required placeholder="Example: A great party at the local leisure facility to celebrate my brother's 45th birthday."></textarea>
+                            
+                            <label for="eventDate">Date:</label>
+                            <input type="date" name="eventDate" id="eventDate" required>
+                            
+                            <div class="starting-time">
+                                <h4>Starting Time:</h4>
+                                <label for="selectHour">Hour:</label>
+                                <select name="selectHour" id="selectHour" form="eventCreationForm" required>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+                                <label for="selectMinute">Minutes:</label>
+                                <select name="selectMinute" id="selectMinute">
+                                    <option value="0">00</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                            </div>
+                            <div class="time-selection-div-for-mobile">
+                                <label for="mobileUserEventTime">Starting Time:</label>
+                                <input type="time" id="mobileUserEventTime" name="mobileUserEventTime" required>
+                            </div>
+                            
+                            <label for="eventThumbnail">Event Thumbnail</label>
+                            <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail">
+                            
+                            <label for="eventLocation">Event Location</label>
+                            <input type="text" required name="eventLocation" id="eventLocation" maxlength="128" placeholder="Example: London, Abbey Road 12">
+                       
+                            <input type="submit" value="Create Event">
+                        </form>
+                        
+                    </div>
+                  
+                </article>
+
+             </section>
+             <script src="../js/paneldisplay.js"></script>
+        </main>
+    <!--footer starts here-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand-image-div">
+                <img src="../images/brandimage.png" alt="Brand logo">
+                <p>Copyright &COPY; 2024</p>
+            </div>
+            <div class="horizontal-divide"></div>
+            <div class="footer-links-div">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="upcoming.html">Upcoming Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="horizontal-divide"></div>
+            <div class="footer-address-div">
+                <h2>Address</h2>
+                <address>
+                    <div>
+                        <img src="../images/mappin.png" alt="Location pin">
+                        <p>Szeged, Hungary, 6724 Sample Street 24.</p>
+                    </div>
+                    <div>
+                        <img src="../images/emailicon.png" alt="Email icon">
+                        <p>sample@sample.com</p>
+                    </div>
+                    <div>
+                        <img src="../images/phoneicon.png" alt="Phone icon">
+                        <p>+36 12 345 6789</p>
+                    </div>
+                </address>
+            </div>
+        </div>
+        
+        </footer>
+        <!--footer ends here-->
+    </body>
+</html>
