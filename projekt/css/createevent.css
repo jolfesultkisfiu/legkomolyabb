@@ -8,6 +8,8 @@ section h2 {
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
     text-align: center;
+    color: rgb(0, 0, 63);
+   
 }
 
 #event-creation-hero-section{
@@ -41,7 +43,7 @@ textarea {
     flex-wrap: wrap ;
     height: fit-content;
   
-    border: 2px aliceblue solid;
+   
     border-radius: 50px;
     box-shadow: 0 0 10px rgb(0, 0, 63);
     padding: 3rem 3rem;
@@ -89,10 +91,65 @@ input[type="submit"]:hover{
     box-shadow: 0 0 10px rgb(74, 88, 105);
 }
 
+input[type="submit"]:active{
+    background-color: rgb(93, 134, 255);
+    color: rgb(6, 0, 94);
+    transition: 0s;
+    box-shadow: 0 0 10px rgb(74, 88, 105);
+}
+
 label {
     margin-bottom: 0.2rem;
 }
 
+select {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 3.6rem;
+    height: 2rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    margin-right: 2rem;
+}
+
+h4 {
+    margin-bottom: 0.2rem;
+}
+
+#fileInputLabel {
+    display: block;
+    width: fit-content;
+    height: 1.4rem;
+    background-color: white;
+    color: rgb(0, 0, 63);
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    transition:0.3s;
+}
+
+#fileInputLabel:hover {
+    background-color: rgb(6, 0, 94);
+    color: whitesmoke;
+    transition:0.3s;
+    cursor: pointer;
+}
+
+input[type="file"] {
+
+  display: none;
+}
+
+input[type="date"] {
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="date"] {
+    border: none;
+    border-radius: 10px;
+}
 
 
 @media (min-width:1080px) {
@@ -102,3 +159,58 @@ label {
     }
 }
 
+@media (max-width:1080px) {
+
+    .time-selection-div-for-mobile {
+        display: block;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        margin: 1rem 0px;
+       
+    }
+    input[type="time"] {
+        border: none;
+        border-radius: 10px;
+        margin-left: .2rem;
+    }
+    .starting-time {
+        display: none;
+    }
+    #eventCreationForm {
+        width: 67vw;
+    }
+}
+
+@media (max-width:640px) {
+
+    input[type] {
+        max-width: 70vw !important;
+    }
+    textarea {
+        max-width: 64vw !important;
+    }
+    .event-creation-article {
+        margin: 0;
+        padding: 0;
+    }
+    .event-creation-hero-section{
+        flex:1;
+    }
+    #eventCreationForm {
+        width: 70vw;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        flex:1;
+        box-shadow: none;
+        border-radius: 10px;
+        text-align: center;
+        align-items: center;
+        overflow: scroll;
+    }
+    #event-creation-hero-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        margin: 0;
+    }
+}

@@ -66,9 +66,11 @@
 
 /*responsivity*/
 @media (max-width:720px) {
+
     .footer-container {
         flex: 1;
         text-align: center;
+        margin: 0;
     }
     .horizontal-divide {
         height: 2px;
