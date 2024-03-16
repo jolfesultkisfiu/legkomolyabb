@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <title>Homepage</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Event advertising website. Create your own events, or attend other people's events">
         <meta name="author" content="Gergo Toth, Robert Nagy">
@@ -17,7 +20,7 @@
         <meta property="og:description" content="Create your own events, or attend other people's events">
         <meta property="og:locale" content="en_US">
         <meta property="og:site_name" content="Events">
-        <meta charset="UTF-8">
+       
       
         <link rel="stylesheet" href="../css/navbarstyle.css">
         <link rel="stylesheet" href="../css/footerstyle.css">
@@ -26,60 +29,66 @@
         <header>
             <nav>
                 <ul class="nav-container">
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#Upcoming Events">Upcoming Events</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="upcomingevent.html">Upcoming Events</a></li>
                     <li><a href="createevent.html">Create Event</a></li>
-                    <div class="search-bar-container">
-                        <div class="search-bar">   
-                            <div class="search-icon"></div>
-                            <form action="../php/search.php" method="post" class="search-form">
-                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                <button  class="search-button" type="submit" value="Search">Search</button> 
+                    <li class="search-bar-li">
+                        <div class="search-bar-container">
+                            <div class="search-bar">   
+                                <div class="search-icon"></div>
+                                <form action="../php/search.php" method="post" class="search-form">
+                                    <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                    <button  class="search-button" type="submit" value="Search">Search</button> 
     
-                            </form>
-                          
-                        </div>
-                    </div>
-                 
-
-                    <li><a href="#Loginpage">Log In</a></li>
-                    <li><a href="#registerpage">Register</a></li>
-
-                    <div class="dropdown-menu" id="dropdownHamburger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="dropdown-panel" id="dropdownPanelId">
-                        <ul class="dropdown-panel-list" id="dropdownPanelList">
-                           
-                            <div class="search-bar-container" id="panelSearchBar">
-                                <div class="search-bar">   
-                                    <!--<div class="search-icon"></div>-->
-                                    <form action="../php/search.php" method="post" class="search-form">
-                                        <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                        <button  class="search-button" type="submit" value="Search"></button> 
-            
-                                    </form>
-                                  
-                                </div>
+                                </form>
+                            
                             </div>
-                            <li><a href="#Upcoming Events">Upcoming Events</a></li>
-                            <li><a href="createevent.html">Create Event</a></li>
-                           
-                         
-        
-                            <li><a href="#Loginpage">Log In</a></li>
-                            <li><a href="#registerpage">Register</a></li>
-
-                           
-                        </ul>
-                       
-                    </div>
+                        </div>
+                    </li>
+                 
+    
+                    <li id="loginLi"><a href="#Loginpage">Log In</a></li>
+                    <li id="registerLi"><a href="#registerpage">Register</a></li>
+    
+                    <li class="dropdown-li">
+                        <div class="dropdown-menu" id="dropdownHamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="dropdown-panel" id="dropdownPanelId">
+                            <ul class="dropdown-panel-list" id="dropdownPanelList">
+                                
+                                <li class="mobile-search-li">
+                                    <div class="search-bar-container" id="panelSearchBar">
+                                        <div class="search-bar">   
+                                            <!--<div class="search-icon"></div>-->
+                                            <form action="../php/search.php" method="post" class="search-form">
+                                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                                <button  class="search-button" type="submit" value="Search"></button> 
+                    
+                                            </form>
+                                        
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                                <li><a href="createevent.html">Create Event</a></li>
+                            
+                            
+            
+                                <li><a href="#Loginpage">Log In</a></li>
+                                <li><a href="#registerpage">Register</a></li>
+    
+                            
+                            </ul>
+                        
+                        </div>
+                    </li>
                 </ul>
-
+    
             </nav>
-        </header>
+            </header>
         <main>
             <!-- temporary section to test the footer position-->
             <section style="height: 78vh; background-color: beige; margin: 0 1rem;">
@@ -99,7 +108,7 @@
                     <h2>Useful Links</h2>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="upcoming.html">Upcoming Events</a></li>
+                        <li><a href="upcomingevent.html">Upcoming Events</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
 
                     </ul>

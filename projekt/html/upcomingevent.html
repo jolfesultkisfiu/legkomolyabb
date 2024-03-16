@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Upcoming</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Event advertising website. Create your own events, or attend other people's events">
+        <meta name="author" content="Gergo Toth, Robert Nagy">
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="notranslate">
+        <meta name="language" content="english">
+        <meta http-equiv="refresh" content="300"> <!--refresh the document every 30 seconds-->
+        <!--MANDATORY OG TAGS-->
+        <meta property="og:title" content="Events">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="../images/brandimage.png">
+        <meta property="og:url" content="index.html">
+        <!--EXTRA OG TAGS-->
+        <meta property="og:description" content="Create your own events, or attend other people's events">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Events">
+        
+      
+        <link rel="stylesheet" href="../css/navbarstyle.css">
+        <link rel="stylesheet" href="../css/footerstyle.css">
+        <link rel="stylesheet" href="../css/upcomingevents.css">
+    </head>
+    <body>
+        <header>
+        <nav>
+            <ul class="nav-container">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                <li><a href="createevent.html">Create Event</a></li>
+                <li class="search-bar-li">
+                    <div class="search-bar-container">
+                        <div class="search-bar">   
+                            <div class="search-icon"></div>
+                            <form action="../php/search.php" method="post" class="search-form">
+                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                <button  class="search-button" type="submit" value="Search">Search</button> 
+
+                            </form>
+                        
+                        </div>
+                    </div>
+                </li>
+             
+
+                <li id="loginLi"><a href="#Loginpage">Log In</a></li>
+                <li id="registerLi"><a href="#registerpage">Register</a></li>
+
+                <li class="dropdown-li">
+                    <div class="dropdown-menu" id="dropdownHamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="dropdown-panel" id="dropdownPanelId">
+                        <ul class="dropdown-panel-list" id="dropdownPanelList">
+                            
+                            <li class="mobile-search-li">
+                                <div class="search-bar-container" id="panelSearchBar">
+                                    <div class="search-bar">   
+                                        <!--<div class="search-icon"></div>-->
+                                        <form action="../php/search.php" method="post" class="search-form">
+                                            <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                            <button  class="search-button" type="submit" value="Search"></button> 
+                
+                                        </form>
+                                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                            <li><a href="createevent.html">Create Event</a></li>
+                        
+                        
+        
+                            <li><a href="#Loginpage">Log In</a></li>
+                            <li><a href="#registerpage">Register</a></li>
+
+                        
+                        </ul>
+                    
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+        </header>
+        <main>
+
+            <section class="event-showcase-section">
+                <h2>Upcoming Events</h2>
+                <article class="event-showcase-article">
+                    <div class="event-thumbnail-display"></div>
+                    <div class="event-sneak-peek">
+                        <h2 class="event-title">Event Title</h2>
+                        <p class="event-short-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, autem fugit porro aliquid, ipsum enim placeat illo eaque asperiores veritatis deserunt. Excepturi corrupti molestias nostrum soluta asperiores qui, laboriosam debitis.</p>
+                        <a href="" class="event-details-link">Event Details</a>
+                    </div>
+                </article>
+               
+
+            </section>
+
+            <script src="../js/paneldisplay.js"></script>
+        </main>
+         <!--footer starts here-->
+         <footer>
+            <div class="footer-container">
+                <div class="footer-brand-image-div">
+                    <img src="../images/brandimage.png" alt="Brand logo">
+                    <p>Copyright &COPY; 2024</p>
+                </div>
+                <div class="horizontal-divide"></div>
+                <div class="footer-links-div">
+                    <h2>Useful Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+                </div>
+                <div class="horizontal-divide"></div>
+                <div class="footer-address-div">
+                    <h2>Address</h2>
+                    <address>
+                        <div>
+                            <img src="../images/mappin.png" alt="Location pin">
+                            <p>Szeged, Hungary, 6724 Sample Street 24.</p>
+                        </div>
+                        <div>
+                            <img src="../images/emailicon.png" alt="Email icon">
+                            <p>sample@sample.com</p>
+                        </div>
+                        <div>
+                            <img src="../images/phoneicon.png" alt="Phone icon">
+                            <p>+36 12 345 6789</p>
+                        </div>
+                    </address>
+                </div>
+            </div>
+            
+        </footer>
+        <!--footer ends here-->
+
+
+    </body>
+
+</html>

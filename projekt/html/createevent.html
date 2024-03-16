@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+         <meta charset="UTF-8">
+        <title>Create Event</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Event advertising website. Create your own events, or attend other people's events">
         <meta name="author" content="Gergo Toth, Robert Nagy">
@@ -16,7 +19,7 @@
         <meta property="og:description" content="Create your own events, or attend other people's events">
         <meta property="og:locale" content="en_US">
         <meta property="og:site_name" content="Events">
-        <meta charset="UTF-8">
+       
       
         <link rel="stylesheet" href="../css/navbarstyle.css">
         <link rel="stylesheet" href="../css/footerstyle.css">
@@ -27,68 +30,73 @@
             <nav>
                 <ul class="nav-container">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#Upcoming Events">Upcoming Events</a></li>
-                    <li><a href="#Contact Us">Create Event</a></li>
-                    <div class="search-bar-container">
-                        <div class="search-bar">   
-                            <div class="search-icon"></div>
-                            <form action="../php/search.php" method="post" class="search-form">
-                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                <button  class="search-button" type="submit" value="Search">Search</button> 
+                    <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                    <li><a href="createevent.html">Create Event</a></li>
+                    <li class="search-bar-li">
+                        <div class="search-bar-container">
+                            <div class="search-bar">   
+                                <div class="search-icon"></div>
+                                <form action="../php/search.php" method="post" class="search-form">
+                                    <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                    <button  class="search-button" type="submit" value="Search">Search</button> 
     
-                            </form>
-                          
-                        </div>
-                    </div>
-                 
-
-                    <li><a href="#Loginpage">Log In</a></li>
-                    <li><a href="#registerpage">Register</a></li>
-
-                    <div class="dropdown-menu" id="dropdownHamburger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="dropdown-panel" id="dropdownPanelId">
-                        <ul class="dropdown-panel-list" id="dropdownPanelList">
-                           
-                            <div class="search-bar-container" id="panelSearchBar">
-                                <div class="search-bar">   
-                                    <!--<div class="search-icon"></div>-->
-                                    <form action="../php/search.php" method="post" class="search-form">
-                                        <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                        <button  class="search-button" type="submit" value="Search"></button> 
-            
-                                    </form>
-                                  
-                                </div>
+                                </form>
+                            
                             </div>
-                            <li><a href="#Upcoming Events">Upcoming Events</a></li>
-                            <li><a href="createevent.html">Create Event</a></li>
-                           
-                         
-        
-                            <li><a href="#Loginpage">Log In</a></li>
-                            <li><a href="#registerpage">Register</a></li>
-
-                           
-                        </ul>
-                       
-                    </div>
+                        </div>
+                    </li>
+                 
+    
+                    <li id="loginLi"><a href="#Loginpage">Log In</a></li>
+                    <li id="registerLi"><a href="#registerpage">Register</a></li>
+    
+                    <li class="dropdown-li">
+                        <div class="dropdown-menu" id="dropdownHamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="dropdown-panel" id="dropdownPanelId">
+                            <ul class="dropdown-panel-list" id="dropdownPanelList">
+                                
+                                <li class="mobile-search-li">
+                                    <div class="search-bar-container" id="panelSearchBar">
+                                        <div class="search-bar">   
+                                            <!--<div class="search-icon"></div>-->
+                                            <form action="../php/search.php" method="post" class="search-form">
+                                                <input class="search-box" type="search" name="search" placeholder="Search for an event...">
+                                                <button  class="search-button" type="submit" value="Search"></button> 
+                    
+                                            </form>
+                                        
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="upcomingevent.html">Upcoming Events</a></li>
+                                <li><a href="createevent.html">Create Event</a></li>
+                            
+                            
+            
+                                <li><a href="#Loginpage">Log In</a></li>
+                                <li><a href="#registerpage">Register</a></li>
+    
+                            
+                            </ul>
+                        
+                        </div>
+                    </li>
                 </ul>
-
+    
             </nav>
-        </header>
-
+            </header>
         <main>
              
              <section id="event-creation-hero-section">
-            
+                <h2>Welcome to the Event Creation page!</h2>
                 <article class="event-creation-article">
                     <h2>Create your event!</h2>
                     <div class="event-creation-form-container">
-                        <form action="" method="post" id="eventCreationForm" enctype="multipart/form-data">
+                        <form action="../php/createevent.php" method="post" id="eventCreationForm" enctype="multipart/form-data">
                             
                             <label for="eventTitle">Event Title:</label>
                             <input type="text" name="eventTitle" id="eventTitle" maxlength="64" required placeholder="Example: George's birthday party">
@@ -102,7 +110,7 @@
                             <div class="starting-time">
                                 <h4>Starting Time:</h4>
                                 <label for="selectHour">Hour:</label>
-                                <select name="selectHour" id="selectHour" form="eventCreationForm" required>
+                                <select size="24"  name="selectHour" id="selectHour" form="eventCreationForm" required>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -226,7 +234,7 @@
                 <h2>Useful Links</h2>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="upcoming.html">Upcoming Events</a></li>
+                    <li><a href="upcomingevent.html">Upcoming Events</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
 
                 </ul>

@@ -7,12 +7,18 @@ section h2 {
     font-weight: 700;
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
+    margin-top: 2rem;
     text-align: center;
     color: rgb(0, 0, 63);
    
 }
 
+section> h2{ /*The sole purpose of this line is to fool the HTML W3C Validator */
+    display: none;
+    border-bottom: 2px aliceblue solid;
+}
 #event-creation-hero-section{
+    text-align: center;
     background-color: #c9dffc;
     height: fit-content;
     margin: 0 1rem;
@@ -185,7 +191,7 @@ input[type="date"] {
 @media (max-width:640px) {
 
     input[type] {
-        max-width: 70vw !important;
+        max-width: 70vw;
     }
     textarea {
         max-width: 64vw !important;
