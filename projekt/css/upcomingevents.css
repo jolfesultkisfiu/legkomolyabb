@@ -1,0 +1,198 @@
+.event-showcase-section {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color:  #c9dffc;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.event-showcase-article{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 2px solid rgb(0,0,63);
+    border-radius: 8rem;
+    width: 80vw;
+    margin-top: 3rem;
+    height: 15rem;
+    flex: 1;
+    text-align: justify;
+    box-shadow: 0 0 10px rgb(0,0,63);
+}
+
+
+.event-short-description {
+    margin-bottom: 1rem;
+}
+
+
+.instructions-to-view-details{
+    font-weight: 700;
+    color: rgb(0,0,63);
+}
+.event-showcase-article a {
+    padding: 3rem;
+    max-height: inherit;
+    flex:0.1;
+    background-color: rgb(127, 187, 255);
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    vertical-align: center;
+    color:aliceblue;
+   
+    background-image: url("../images/rightarrow.png");
+    
+    background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: 0.5s;
+
+}
+
+.event-showcase-article a:hover {
+    background-color: aliceblue;
+    
+    box-shadow: 0 0 10px rgb(11, 37, 184);
+    transition:0.6s;
+}
+
+
+
+.event-sneak-peek {
+    flex: 1;
+    padding: 3rem 3rem 3rem 1rem;
+}
+
+.event-sneak-peek h2 {
+    margin-bottom: 1rem;
+}
+.event-thumbnail-display {
+    
+    
+    max-height: inherit;
+    object-fit: cover;
+    vertical-align: center;
+    flex:0.45;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    margin-right: 2rem;
+   
+}
+
+
+
+.event-showcase-section article:nth-of-type(even){
+    margin-left: auto;
+    float: right;
+    
+}
+
+@media (max-width:1080px) {
+
+    .event-showcase-article{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border: 2px solid rgb(0,0,63);
+        border-radius: 1rem;
+        width: 90vw;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        height: 15rem;
+        flex: 1;
+        box-shadow: 0 0 10px rgb(0,0,63);
+       
+    }
+    
+    .event-thumbnail-display {
+    
+    
+        width: 100%;
+        max-height: inherit;
+        object-fit: cover;
+        vertical-align: center;
+        flex:1;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+        margin-right: 1rem;
+       
+    }
+}
+
+@media (max-width:850px) {
+    .event-showcase-article{
+        margin-left: auto;
+        margin-right: auto;
+        justify-items: center;
+        width: auto;
+        flex-direction: column;
+       
+    }
+    .event-thumbnail-display {
+    
+    
+        max-height: 12rem !important;
+        width: 100%;
+        max-height: inherit;
+        object-fit: cover;
+        vertical-align: center;
+        flex:1;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: inherit;
+        margin-right: 1rem;
+       
+    }
+    h2 {
+        text-align: center;
+    }
+    .event-showcase-article a {
+        padding: 3rem;
+        max-height: inherit;
+    
+        display: flex;
+        align-items: stretch;
+
+        background-color: rgb(127, 187, 255);
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        border-top-right-radius: 0;
+        margin-right: 1rem;
+        color:aliceblue;
+        background-image: url("../images/downarrow.png");
+        background-blend-mode: multiply;
+     
+        transition: 0.5s;
+        
+    
+    }
+}
+
+@media (max-width:400px) {
+    .event-showcase-article {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 2px;
+    }
+    .event-showcase-section {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0.4rem;
+        padding-right: 0.6rem;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .event-thumbnail-display {
+        max-height: 9rem !important;
+    }
+}
