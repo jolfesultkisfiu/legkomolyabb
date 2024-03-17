@@ -27,9 +27,7 @@ section> h2{ /*The sole purpose of this line is to fool the HTML W3C Validator *
     justify-content: center;
     flex-wrap: wrap;
    
-   
-    background: radial-gradient(circle, rgba(153,187,255,1) 60%, rgba(33,141,250,1) 100%, rgba(2,0,36,1) 100%); 
-    
+  
     
 }
 
@@ -49,6 +47,7 @@ textarea {
     flex-wrap: wrap ;
     height: fit-content;
   
+    background: radial-gradient(ellipse at center, rgb(205, 222, 255) 40%,  rgb(100, 174, 249) 100%, rgba(2,0,36,1) 100%); 
    
     border-radius: 50px;
     box-shadow: 0 0 10px rgb(0, 0, 63);
