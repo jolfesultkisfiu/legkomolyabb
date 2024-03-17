@@ -135,9 +135,11 @@
         display: none;
     }
 
+
     .mobile-search-li {
-        display: none !important;
-       
+        display: flex !important;
+        padding: 0px !important;
+        margin: 0px 0px 2rem 0px !important;
     }
    
    
@@ -179,11 +181,42 @@
         display: block;
     }
     #panelSearchBar {
-        display: none;
+        margin-left: 25vw;
+        display: flex;
+        margin-left: 0;
+        
+        height: auto;
     }
+
+    .search-bar {
+        display: flex;
+        justify-self: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: 1.618rem;
+    }
+
     .search-box{
-        width: 44vw;
+        width: 80vw;
+        margin: 0;
+        height: 2.6rem;
+        padding-left: 1rem;
         max-width: 100% !important;
+    }
+
+    .search-button {
+        width: 20vw;
+        border-radius: 0;
+        margin: 0;
+        height: 2.62rem;
+        float: right;
+        background-color: rgb(147, 183, 222);
+        background-image: url('../images/searchicon.png');
+        background-blend-mode: darken;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        transition: 0.4s;
     }
     .dropdown-panel-list {
         display: flex;
@@ -198,16 +231,17 @@
     margin-right: 0;
     display: block;
     float:right;
-    text-align: left;
-    width: 6rem;
+    text-align: right;
+    width: 33vw;
    }
-   .dropdown-panel li {
-    padding:1.6rem 0px;
-   }
+  
     .dropdown-panel {
         display: none;
     }
-   
+    .search-button:hover{
+        background-color: rgb(158, 204, 244);
+        transition: 0.2s;
+    }
    
 }
 
@@ -235,15 +269,12 @@
     #panelSearchBar {
         margin-left: 25vw;
         display: flex;
-        
-        
-    }
-    #panelSearchBar {
         margin-left: 0;
         
         height: auto;
-       
+        
     }
+   
     .search-bar-container {
         height: 3rem;
     }
@@ -325,5 +356,11 @@
         border-radius: 0;
         margin: 0;
         float:right;
+    }
+}
+
+@media print {
+    .nav-container {
+        display: none !important;
     }
 }

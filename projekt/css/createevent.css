@@ -6,8 +6,8 @@
 section h2 {
     font-weight: 700;
     font-size: 1.6rem;
-    margin-bottom: 1.6rem;
-    margin-top: 2rem;
+    margin-bottom: 3.6rem;
+    margin-top: 1.618rem;
     text-align: center;
     color: rgb(0, 0, 63);
    
@@ -15,7 +15,6 @@ section h2 {
 
 section> h2{ /*The sole purpose of this line is to fool the HTML W3C Validator */
     display: none;
-    border-bottom: 2px aliceblue solid;
 }
 #event-creation-hero-section{
    
@@ -48,13 +47,15 @@ textarea {
     height: fit-content;
   
     background: radial-gradient(ellipse at center, rgb(205, 222, 255) 40%,  rgb(100, 174, 249) 100%, rgba(2,0,36,1) 100%); 
-   
+    border: 2px solid rgb(0, 0, 63);
     border-radius: 50px;
-    box-shadow: 0 0 10px rgb(0, 0, 63);
+    box-shadow: 0 0 20px rgb(0, 0, 63);
     padding: 3rem 3rem;
     background-color: rgb(181, 213, 255);
     
     width: 50vw;
+    color: rgb(0, 0, 63);
+    font-size: 1.1rem;
 }
 
 #eventCreationForm * {
@@ -121,7 +122,7 @@ option:not(:first-of-type) {
 
 select {
     appearance: none;
-
+    
     background-color: rgb(255, 255, 255);
     border: none;
     width: 3.6rem;

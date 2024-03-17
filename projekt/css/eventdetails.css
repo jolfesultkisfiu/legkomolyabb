@@ -60,6 +60,7 @@ body {
     background-color: royalblue;
     box-shadow: 0 0 10px rgb(0,0,63);
     transition: .5s;
+    cursor: pointer;
 }
 
 .event-details-container input[type="submit"]:active {
@@ -94,5 +95,42 @@ body {
         padding-right: 1rem;
         text-align: center !important;
     }
+    
+}
+
+@media print {
+
+    body {
+        background-color: white !important;
+        color:black !important;
+        box-shadow: none !important;
+        image-rendering: optimizeSpeed !important;
+        
+    }
+    img {
+        filter: grayscale(100%) !important;
+    }
+    .event-details-container {
+        box-sizing: none !important;
+        margin: 0px !important;
+        height: 100vh !important;
+        width: 100vw !important;
+        border-radius: 0px !important;
+    }
+    input {
+        display: none !important;
+    }
+    p {
+        margin-bottom: 2px !important;
+    }
+    h2 {
+        margin-bottom: 2px !important;
+        margin-top: 1rem !important;
+    }
+    p:first-of-type {
+        margin-bottom: 1rem !important;
+    }
+    
+
     
 }

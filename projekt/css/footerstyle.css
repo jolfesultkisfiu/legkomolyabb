@@ -92,3 +92,9 @@
     }
   
 }
+
+@media print {
+    .footer-container {
+        display: none !important;
+    }
+}
