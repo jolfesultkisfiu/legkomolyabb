@@ -10,6 +10,36 @@
     Main search bar and filters section
     Moved the inline style to a CSS class instead
 
+      FLEXBOX fontosabb dolgok: (ignorald ha mar tudod)
+
+    lehet vizszintes vagy fuggoleges modon rendezni benne az elemeket
+    
+    display:flex -- ez mondja meg egy elementnek hogy flexbox legyen
+    flex-wrap: wrap; -- ez engedelyezi, hogy reszponzivan a konteneren belul 
+    maradjanak a flex item-ek, es ne legyen invisible overflow (vagyis minden
+    siman folyjon)
+    
+    justify-content: center; -- justify-content fogja vizszintes elrendezesben a megadott helyre
+    igazitani az elemeket (itt kozepre), justify-items pedig fuggoleges elrendezesben igazitja a dolgokat
+
+    flex-direction: row; --ez az ertek "row" ha vizszintes elrendezest akarsz, "column" ha fuggolegest
+
+    szoval parban megy a ketto:
+
+    HA VIZSZINTES FLEXBOX kell:
+
+    justify-content: center;
+    flex-direction: row;
+
+  
+  
+    HA FUGGOLEGES: 
+
+    justify-items: center;
+    flex-direction: column;
+
+
+    ami mindig kell az a display meg a flex-wrap. A flex-wrap default erteke a "nowrap".
   
 */
 .main-search-section {
