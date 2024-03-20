@@ -103,7 +103,7 @@
         flex-wrap: wrap;
         flex-direction: row;
         border: 2px solid rgb(0,0,63);
-        border-radius: 1rem;
+        border-radius: 3rem;
         width: 90vw;
         margin-top: 3rem;
         margin-bottom: 6rem;
@@ -181,7 +181,7 @@
     .event-showcase-article {
         margin-left: 0;
         margin-right: 0;
-        border-radius: 2px;
+        border-radius: 2rem;
     }
     .event-showcase-section {
         margin-left: 0;

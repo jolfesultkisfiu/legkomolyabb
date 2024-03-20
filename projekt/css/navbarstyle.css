@@ -6,7 +6,20 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+
 /*Navbar*/
+
+
+
+.search-bar-container {
+    display: none; /*Added code to remove the search option from pages other than the homepage*/
+}
+
+#panelSearchBar {
+    display: none !important;
+}
+
 .dropdown-panel{
     
     display: none; height: 0;
@@ -139,7 +152,7 @@
     .mobile-search-li {
         display: flex !important;
         padding: 0px !important;
-        margin: 0px 0px 2rem 0px !important;
+        margin: 0px 0px 0.6rem 0px !important;
     }
    
    
@@ -253,7 +266,7 @@
     .mobile-search-li {
         display: flex !important;
         padding: 0px !important;
-        margin: 0px 0px 2rem 0px !important;
+        margin: 0px 0px 0.6rem 0px !important;
     }
     .dropdown-panel-list {
         display: flex;
