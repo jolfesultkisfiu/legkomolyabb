@@ -4,6 +4,26 @@
     height: 0;
 }
 
+
+/*
+
+    Main search bar and filters section
+    Moved the inline style to a CSS class instead
+
+  
+*/
+.main-search-section {
+    height: fit-content; 
+    background-color: #c9dffc;
+    margin: 0 1rem;
+    padding: 3rem 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+   
+}
+
 .container{
     width: 100%;  
     padding:5%;
@@ -14,9 +34,13 @@
     row-gap: 10px;
 }
 .filters{
+    max-width: 700px;
+    width: 67vw;
     display:flex;
     column-gap: 4%;
     justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 1rem;
 }
 .filter{
     background-color: beige;
