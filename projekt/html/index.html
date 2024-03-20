@@ -21,9 +21,11 @@
         <meta property="og:locale" content="en_US">
         <meta property="og:site_name" content="Events">
        
-      
+        <link rel="stylesheet" href="../css/homepage.css">
         <link rel="stylesheet" href="../css/navbarstyle.css">
         <link rel="stylesheet" href="../css/footerstyle.css">
+        
+
     </head>
     <body>
         <header>
@@ -91,8 +93,63 @@
             </header>
         <main>
             <!-- temporary section to test the footer position-->
-            <section style="height: 78vh; background-color: beige; margin: 0 1rem;">
+            <section style="height: 78vh; background-color: rgb(172, 214, 230); margin: 0 1rem;">
+            <div class="container">
+                <form action="" class="search-bar1">
+                    <input type="text" placeholder="Search event", name="searched">
+                    <button type="submit"><img src="../images/search.png"></button>
+                </form>
+                <div class="break"></div>
+                <div class="filters">
+                    <select class="filter">
+                        <option value="0">Today</option>
+                        <option value="1">Tomorrow</option>
+                        <option value="2">This weekend</option>
+                        <option value="3">This week</option>
+                        <option value="4">This month</option>
+                        <option value="5">Anytime</option>
+                      </select>
+                    <select class="filter">
+                        <option value="6">Szeged</option>
+                        <option value="7">Debrecen</option>
+                        <option value="8">Budapest</option>
+                        <option value="9">Pécs</option>
+                        <option value="10">Other city</option>
+                      </select>
+                    <select class="filter">
+                        <option value="11">Sport events</option>
+                        <option value="12">Festivals</option>
+                        <option value="13">Concerts</option>
+                        <option value="14">Club nights</option>
+                        <option value="15">Theatre & Comedy</option>
+                      </select>
+                    <select class="filter">
+                        <option value="16">Techno</option>
+                        <option value="17">Blues</option>
+                        <option value="18">Disco</option>
+                        <option value="19">Classical</option>
+                        <option value="20">Country</option>
+                        <option value="21">Rock</option>
+                        <option value="22">Drum and bass</option>
+                      </select>
+                </div>
+                <div class="break"></div>
+                <div class="events">
 
+                <article class="event-showcase-article">
+                    <img src="../images/party.jpg" class="event-thumbnail-display" alt="event thumnbail">
+                    <div class="event-sneak-peek">
+                        <h2 class="event-title">Event Title</h2>
+                        <p class="event-short-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, autem fugit porro aliquid, ipsum enim placeat illo eaque asperiores veritatis deserunt. Excepturi corrupti molestias nostrum soluta asperiores qui, laboriosam debitis.</p>
+                        <p class="instructions-to-view-details">Click on the double arrow to see more details</p>
+                    
+                    </div>
+                    <a href="eventdetails.html" class="event-details-link" title="Event Details"></a>
+                </article>
+        
+                </div>
+            </div>
+            
             </section>
             <script src="../js/paneldisplay.js"></script>
         </main>
