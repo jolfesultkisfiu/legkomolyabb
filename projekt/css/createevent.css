@@ -47,6 +47,7 @@ textarea {
     height: fit-content;
   
     background: radial-gradient(ellipse at center, rgb(205, 222, 255) 40%,  rgb(100, 174, 249) 100%, rgba(2,0,36,1) 100%); 
+  
     border: 2px solid rgb(0, 0, 63);
     border-radius: 50px;
     box-shadow: 0 0 20px rgb(0, 0, 63);

@@ -79,7 +79,9 @@
     backdrop-filter: blue(20px);
     box-shadow: 0 0 010px rgba(0,0,0,.2);
     border-radius: 10px;
-    background-color: rgb(187, 233, 231);
+    background-color: rgb(181, 213, 255);
+    background: radial-gradient(ellipse at center, rgb(205, 222, 255) 40%,  rgb(100, 174, 249) 100%, rgba(2,0,36,1) 100%); 
+  
 }
 .contactForm h2{
     font-size: 30px;
@@ -119,7 +121,16 @@
     cursor:pointer;
     padding:10px;
     font-size:18px;
+    transition: 0.5s;
 }
+
+.contactForm .inputBox input[type="submit"]:hover{
+   
+    background-color: rgb(0,0,63);
+    color:aliceblue;
+    transition: 0.5s;
+}
+
 @media(max-width:991px){
     .contact{
         padding:50px;
