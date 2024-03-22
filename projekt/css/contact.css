@@ -8,7 +8,7 @@
 }
 .contact{
     position: relative;
-    min-height: 100vh;
+    
     padding:50px 100px;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
 .contact .content{
     max-width: 800px;
     text-align: center;
-
+    margin-bottom: 80px;
 }
 .contact .content h2{
     font-size: 36px;
@@ -76,7 +76,7 @@
     width: 40%;
     padding:40px;
     border:2px solid rgba(255,255,255,.2);
-    backdrop-filter: blue(20px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 0 010px rgba(0,0,0,.2);
     border-radius: 10px;
     background-color: rgb(181, 213, 255);
@@ -104,9 +104,12 @@
     border-bottom:2px solid #333;
     outline: none;
     resize: none;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
 }
 .contactForm .inputBox input::placeholder,
 .contactForm .inputBox textarea::placeholder{
+    
     color:rgb(0, 0, 0);
     font-size:16px;
     
