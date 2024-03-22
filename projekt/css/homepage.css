@@ -142,6 +142,15 @@
     background-color:  #c9dffc;
     text-align: center;
 }
+
+@media (max-width:720px) {
+    .main-search-section 
+    {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}
+
 @media (max-width:400px) {
     .search-bar1{
         max-width: 200px;
