@@ -104,14 +104,14 @@ body {
         background-color: white !important;
         color:black !important;
         box-shadow: none !important;
-        image-rendering: optimizeSpeed !important;
+      
         
     }
     img {
         filter: grayscale(100%) !important;
     }
     .event-details-container {
-        box-sizing: none !important;
+       
         margin: 0px !important;
         height: 100vh !important;
         width: 100vw !important;

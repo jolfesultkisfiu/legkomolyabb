@@ -159,7 +159,7 @@
         max-height: 4rem;
         overflow:hidden;
         text-overflow: ellipsis;
-        line-clamp: 5;
+        
     }
     
 }
