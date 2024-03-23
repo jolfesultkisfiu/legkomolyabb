@@ -98,3 +98,9 @@
         display: none !important;
     }
 }
+
+.active-footer {
+    color:aliceblue !important;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}

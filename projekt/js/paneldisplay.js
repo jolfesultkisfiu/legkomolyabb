@@ -25,6 +25,26 @@ myDiv.addEventListener('click', function() {
 
 });
 
+//navbarmaxxing
+
+window.onload = function() {
+  var currentPage = document.body.id; // Get the id of the current page
+  var navItems = document.querySelectorAll('.nav-container li'); // Select all navbar list items
+  navItems.forEach(function(item) {
+      if (item.dataset.page === currentPage) { // Check if the dataset.page attribute matches the current page id
+          item.classList.add('active'); // Add 'active' class to the matching item
+      }
+  });
+  var navItems = document.querySelectorAll('.footer-container li'); // Select all navbar list items
+  navItems.forEach(function(item) {
+      if (item.dataset.page === currentPage) { // Check if the dataset.page attribute matches the current page id
+          item.classList.add('active-footer'); // Add 'active' class to the matching item
+      }
+  });
+}
+
+
+
 
 
 
