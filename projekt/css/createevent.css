@@ -178,6 +178,7 @@ input[type="date"] {
 
     .time-selection-div-for-mobile {
         display: none;
+        pointer-events: none;
     }
 }
 
@@ -192,6 +193,7 @@ input[type="date"] {
        
     }
     input[type="time"] {
+        pointer-events: none;
         border: none;
         border-radius: 10px;
         margin-left: .2rem;
