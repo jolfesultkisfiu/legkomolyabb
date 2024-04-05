@@ -15,7 +15,7 @@
         <meta property="og:title" content="Events">
         <meta property="og:type" content="website">
         <meta property="og:image" content="projekt/images/brandimage.png">
-        <meta property="og:url" content="index.html">
+        <meta property="og:url" content="index.php">
         <!--EXTRA OG TAGS-->
         <meta property="og:description" content="Create your own events, or attend other people's events">
         <meta property="og:locale" content="en_US">
@@ -33,13 +33,13 @@
         <header>
             <nav>
                 <ul class="nav-container">
-                    <li data-page="homepage"><a href="index.html">Home</a></li>
+                    <li data-page="homepage"><a href="index.php">Home</a></li>
                     <li data-page="upcomingEvents"><a href="projekt/html/upcomingevent.html">Upcoming Events</a></li>
                     <li data-page="createEvent"><a href="projekt/html/createevent.html">Create Event</a></li>
                     <li class="search-bar-li">
 
                             
-                        <a class="search-anchor" href="index.html">Search for an Event</a>
+                        <a class="search-anchor" href="index.php">Search for an Event</a>
                        
 
                         <div class="search-bar-container">
@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>  <a class="search-anchor" href="index.html">Search for an Event</a>
+                                <li>  <a class="search-anchor" href="index.php">Search for an Event</a>
                                 </li>
                                 <li data-page="upcomingEvents"><a href="projekt/html/upcomingevent.html">Upcoming Events</a></li>
                                 <li data-page="createEvent"><a href="projekt/html/createevent.html">Create Event</a></li>
@@ -272,7 +272,7 @@
                 <div class="footer-links-div">
                     <h2>Useful Links</h2>
                     <ul>
-                        <li data-page="homepage"><a href="index.html">Home</a></li>
+                        <li data-page="homepage"><a href="index.php">Home</a></li>
                         <li data-page="upcomingEvents"><a href="projekt/html/upcomingevent.html">Upcoming Events</a></li>
                         <li data-page="contact"><a href="projekt/html/contact.html">Contact Us</a></li>
 
