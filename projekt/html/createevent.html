@@ -101,7 +101,7 @@
                 <article class="event-creation-article">
                     <h2>Create your event!</h2>
                     <div class="event-creation-form-container">
-                        <form action="../php/createevent.php" method="post" id="eventCreationForm" enctype="multipart/form-data">
+                        <form action="../php/createevent.php" method="POST" id="eventCreationForm" enctype="multipart/form-data">
                             
                             <label for="eventTitle">Event Title:</label>
                             <input type="text" name="eventTitle" id="eventTitle" maxlength="64" required placeholder="Example: George's birthday party">
@@ -217,7 +217,7 @@
                             <label for="eventLocation">Event Location:</label>
                             <input type="text" required name="eventLocation" id="eventLocation" maxlength="128" placeholder="Example: London, Abbey Road 12">
                        
-                            <input type="submit" value="Create Event">
+                            <input type="submit" value="Create Event" name="submitBT" id="submitBT">
                         </form>
                         
                     </div>
