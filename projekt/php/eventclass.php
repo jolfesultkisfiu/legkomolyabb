@@ -8,6 +8,7 @@
         private $startingTime;
         private $thumbnail;
         private $location;
+        public static $totalNumberOfEvents = 0;
 
         public function __construct($title, $details, $date, $startingTime, $thumbnail, $location) {
             $this->title = $title;
@@ -16,8 +17,11 @@
             $this->startingTime = $startingTime;
             $this->thumbnail = $thumbnail;
             $this->location = $location;
+            self::$totalNumberOfEvents++;
+
         }
 
+    
         public function getTitle(){
             return $this->title;
         }

@@ -1,1 +1,19 @@
-{}
+{
+    "events": {
+        "1": {
+            "\u0000Event\u0000title": "fda",
+            "\u0000Event\u0000details": "faf",
+            "\u0000Event\u0000date": "2026-05-03",
+            "\u0000Event\u0000startingTime": "18:30",
+            "\u0000Event\u0000thumbnail": {
+                "name": "RobertNagyImage.jpg",
+                "full_path": "RobertNagyImage.jpg",
+                "type": "image\/jpeg",
+                "tmp_name": "C:\\xampp\\tmp\\phpF635.tmp",
+                "error": 0,
+                "size": 20185
+            },
+            "\u0000Event\u0000location": "ew"
+        }
+    }
+}

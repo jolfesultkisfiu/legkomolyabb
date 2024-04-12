@@ -5,7 +5,7 @@
 
     
     if (isset($_POST["submitBT"])) {
-       print_r( $_FILES["eventThumbnail"]);
+      // print_r( $_FILES["eventThumbnail"]);
       
     if(
         isset($_POST["eventTitle"]) && isset($_POST["eventDetails"])
@@ -18,25 +18,42 @@
         $details = trim($_POST["eventDetails"]);
         $date = $_POST["eventDate"];
         $startingTime = "";
-        if(isset($_POST["mobileUserEventTime"])){
+        echo $_POST["mobileUserEventTime"] . "<br>";
+        // echo $_POST["selectHour"] . "<br>";
+        // echo $_POST["selectMinute"] . "<br>";
+
+        if( isset($_POST["selectHour"]) && isset($_POST["selectMinute"])) {
+            //echo "EYESYESY<br>";
+            $startingTime = $_POST["selectHour"]. ":" . $_POST["selectMinute"];
+           // echo $startingTime;
+        }
+        if( isset($_POST["mobileUserEventTime"]) && !empty($_POST["mobileUserEventTime"])){
+            echo "NIGGER:" . $_POST["mobileUserEventTime"] . "<br>";
+          
             $startingTime = $_POST["mobileUserEventTime"];
         }
-        else {
-            $startingTime = $_POST["selectHour"] . $_POST["selectMinute"];
-        }
+       
+        echo $startingTime;
         $thumbnail = $_FILES["eventThumbnail"];
         $location = trim($_POST["eventLocation"]);
 
         $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location);
-       // print_r($event);
+      //  print_r($event);
        
-       $aExtraInfo = getimagesize($_FILES['eventThumbnail']['tmp_name']);
+      /* $aExtraInfo = getimagesize($_FILES['eventThumbnail']['tmp_name']);
        $sImage = "data:" . $aExtraInfo["mime"] . ";base64," . base64_encode(file_get_contents($_FILES['eventThumbnail']['tmp_name']));
        echo '<p>The image has been uploaded successfully</p><p>Preview:</p><img src="' . $sImage . '" alt="Your Image" />';
-
-       $jsondata = json_encode($event, JSON_PRETTY_PRINT);
+      */
+        
+       $assocArr["events"][$event::$totalNumberOfEvents] = (array) $event;
+        $jsondata = json_encode($assocArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
        file_put_contents("../json/events.json",$jsondata);
+       $jsondata = file_get_contents("../json/events.json");
+   
+       $decoded = json_decode($jsondata,true);
+       print_r($decoded);
 
-    }}
+    }
+}
 
 ?>

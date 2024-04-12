@@ -116,16 +116,16 @@
                                 <h4>Starting Time:</h4>
                                 <label for="selectHour">Hour:</label>
                                 <select size="24"  name="selectHour" id="selectHour" form="eventCreationForm">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
+                                    <option value="00">0</option>
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -143,16 +143,16 @@
                                 </select>
                                 <label for="selectMinute">Minutes:</label>
                                 <select name="selectMinute" id="selectMinute" size="60">
-                                    <option value="0">00</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
-                                    <option value="8">08</option>
-                                    <option value="9">09</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -213,7 +213,7 @@
                             <h4>Event Thumbnail (accepted formats: .jpg, .png, .webp, .jpeg)</h4>
                             <label for="eventThumbnail" id="fileInputLabel">Browse...</label>
                             <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail">
-                            
+                
                             <label for="eventLocation">Event Location:</label>
                             <input type="text" required name="eventLocation" id="eventLocation" maxlength="128" placeholder="Example: London, Abbey Road 12">
                        
