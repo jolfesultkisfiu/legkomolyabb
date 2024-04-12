@@ -1,19 +1,19 @@
 {
     "events": {
         "1": {
-            "\u0000Event\u0000title": "fda",
-            "\u0000Event\u0000details": "faf",
-            "\u0000Event\u0000date": "2026-05-03",
-            "\u0000Event\u0000startingTime": "18:30",
+            "\u0000Event\u0000title": "asder",
+            "\u0000Event\u0000details": "geadfe",
+            "\u0000Event\u0000date": "2025-04-03",
+            "\u0000Event\u0000startingTime": "04:30",
             "\u0000Event\u0000thumbnail": {
-                "name": "RobertNagyImage.jpg",
-                "full_path": "RobertNagyImage.jpg",
-                "type": "image\/jpeg",
-                "tmp_name": "C:\\xampp\\tmp\\phpF635.tmp",
+                "name": "Screenshot 2024-01-25 222023.png",
+                "full_path": "Screenshot 2024-01-25 222023.png",
+                "type": "image\/png",
+                "tmp_name": "C:\\xampp\\tmp\\php45B3.tmp",
                 "error": 0,
-                "size": 20185
+                "size": 97459
             },
-            "\u0000Event\u0000location": "ew"
+            "\u0000Event\u0000location": "fdffsdf"
         }
     }
 }
