@@ -33,8 +33,8 @@
         <nav>
             <ul class="nav-container">
                 <li data-page="homepage"><a href="../../index.php">Home</a></li>
-                <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                <li data-page="createEvent"><a href="createevent.html">Create Event</a></li>
+                <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
+                <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
                 <li class="search-bar-li">
                         
                     <a class="search-anchor" href="../../index.php">Search for an Event</a>
@@ -53,8 +53,8 @@
                 </li>
              
 
-                <li id="loginLi"><a href="login.html">Log In</a></li>
-                <li id="registerLi"><a href="register.html">Register</a></li>
+                <li id="loginLi"><a href="login.php">Log In</a></li>
+                <li id="registerLi"><a href="register.php">Register</a></li>
 
                 <li class="dropdown-li">
                     <div class="dropdown-menu" id="dropdownHamburger">
@@ -80,13 +80,13 @@
                             </li>
                             <li>  <a class="search-anchor" href="../../index.php">Search for an Event</a>
                             </li>
-                            <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                            <li data-page="createEvent"><a href="createevent.html">Create Event</a></li>
+                            <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
+                            <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
                         
                         
         
-                            <li><a href="login.html">Log In</a></li>
-                            <li><a href="register.html">Register</a></li>
+                            <li><a href="login.php">Log In</a></li>
+                            <li><a href="register.php">Register</a></li>
 
                         
                         </ul>
@@ -113,7 +113,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                     <article class="event-showcase-article-new">
                         <img src="../images/gig.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
@@ -123,7 +123,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                     <article class="event-showcase-article-new">
                         <img src="../images/conference.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
@@ -133,7 +133,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                     <article class="event-showcase-article-new">
                         <img src="../images/artexhibition.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
@@ -143,7 +143,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                     <article class="event-showcase-article-new">
                         <img src="../images/party.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
@@ -153,7 +153,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                     <article class="event-showcase-article-new">
                         <img src="../images/hiking.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
@@ -163,7 +163,7 @@
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
                         
                         </div>
-                        <a href="eventdetails.html" class="event-details-link-new" title="Event Details"></a>
+                        <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
                     </article>
                    
                 </div>
@@ -187,7 +187,7 @@
                         <p class="instructions-to-view-details">Click on the double arrow to see more details</p>
                     
                     </div>
-                    <a href="eventdetails.html" class="event-details-link" title="Event Details"></a>
+                    <a href="eventdetails.php" class="event-details-link" title="Event Details"></a>
                 </article>
                 <article class="event-showcase-article">
                     <img src="../images/hiking.jpg" class="event-thumbnail-display" alt="event thumnbail">
@@ -197,7 +197,7 @@
                         <p class="instructions-to-view-details">Click on the double arrow to see more details</p>
                     
                     </div>
-                    <a href="eventdetails.html" class="event-details-link" title="Event Details"></a>
+                    <a href="eventdetails.php" class="event-details-link" title="Event Details"></a>
                 </article>
                 <article class="event-showcase-article">
                     <img src="../images/conference.jpg" class="event-thumbnail-display" alt="event thumnbail">
@@ -207,7 +207,7 @@
                         <p class="instructions-to-view-details">Click on the double arrow to see more details</p>
                         
                     </div>
-                    <a href="eventdetails.html" class="event-details-link" title="Event Details"></a>
+                    <a href="eventdetails.php" class="event-details-link" title="Event Details"></a>
                 </article>
                
 
@@ -227,8 +227,8 @@
                     <h2>Useful Links</h2>
                     <ul>
                         <li data-page="homepage"><a href="../../index.php">Home</a></li>
-                        <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                        <li data-page="contact"><a href="contact.html">Contact Us</a></li>
+                        <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
+                        <li data-page="contact"><a href="contact.php">Contact Us</a></li>
 
                     </ul>
                 </div>

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Contact us</title>
+        <title>Event Details</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Event advertising website. Create your own events, or attend other people's events">
@@ -10,37 +10,33 @@
         <meta name="robots" content="index, follow">
         <meta name="googlebot" content="notranslate">
         <meta name="language" content="english">
-        <meta http-equiv="refresh" content="300"> <!--refresh the document every 300 seconds-->
+        <meta http-equiv="refresh" content="3000"> <!--refresh the document every 30 seconds-->
         <!--MANDATORY OG TAGS-->
         <meta property="og:title" content="Events">
         <meta property="og:type" content="website">
         <meta property="og:image" content="../images/brandimage.png">
-        
+        <meta property="og:url" content="../../index.php">
         <!--EXTRA OG TAGS-->
         <meta property="og:description" content="Create your own events, or attend other people's events">
         <meta property="og:locale" content="en_US">
         <meta property="og:site_name" content="Events">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="../css/contact.css">
+       
+        <link rel="stylesheet" href="../css/eventdetails.css">
         <link rel="stylesheet" href="../css/navbarstyle.css">
         <link rel="stylesheet" href="../css/footerstyle.css">
-        
-        
-
     </head>
-    <body id="contact">
+    <body>
         <header>
             <nav>
                 <ul class="nav-container">
-                    <li data-page="homepage"><a href="../../index.php">Home</a></li>
-                    <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                    <li data-page="createEvent"><a href="createevent.html">Create Event</a></li>
+                    <li><a href="../../index.php">Home</a></li>
+                    <li><a href="upcomingevent.php">Upcoming Events</a></li>
+                    <li><a href="createevent.php">Create Event</a></li>
                     <li class="search-bar-li">
-
-                            
+                          
                         <a class="search-anchor" href="../../index.php">Search for an Event</a>
                        
-
+                      
                         <div class="search-bar-container">
                             <div class="search-bar">   
                                 <div class="search-icon"></div>
@@ -55,8 +51,8 @@
                     </li>
                  
     
-                    <li id="loginLi"><a href="login.html">Log In</a></li>
-                    <li id="registerLi"><a href="register.html">Register</a></li>
+                    <li id="loginLi"><a href="login.php">Log In</a></li>
+                    <li id="registerLi"><a href="register.php">Register</a></li>
     
                     <li class="dropdown-li">
                         <div class="dropdown-menu" id="dropdownHamburger">
@@ -68,6 +64,7 @@
                             <ul class="dropdown-panel-list" id="dropdownPanelList">
                                 
                                 <li class="mobile-search-li">
+                                    
                                     <div class="search-bar-container" id="panelSearchBar">
                                         <div class="search-bar">   
                                             <!--<div class="search-icon"></div>-->
@@ -82,13 +79,13 @@
                                 </li>
                                 <li>  <a class="search-anchor" href="../../index.php">Search for an Event</a>
                                 </li>
-                                <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                                <li data-page="createEvent"><a href="createevent.html">Create Event</a></li>
+                                <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
+                                <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
                             
                             
             
-                                <li><a href="login.html">Log In</a></li>
-                                <li><a href="register.html">Register</a></li>
+                                <li><a href="login.php">Log In</a></li>
+                                <li><a href="register.php">Register</a></li>
     
                             
                             </ul>
@@ -100,68 +97,28 @@
             </nav>
             </header>
         <main>
-            <section class="contact">
-                <div class="content">
-                    <h2>Contact Us</h2>
-                    <p>We're delighted that you've reached out to us! Whether you have inquiries, feedback, or simply want to share your thoughts, please feel free to contact us using the following details:</p>
+            
+            <div class="event-details-container">
+                <img src="../images/hiking.jpg" alt="Event thumbnail">
+                <h2>Hiking Tour with friends at the local mountain</h2>
+                <div class="event-info">
+                    <p class="detailed-info-paragraph">
+                        Discover the beauty of the great outdoors on our immersive hiking trip! Escape the hustle and bustle of daily life as we venture into the heart of nature's wonders. With expert guides leading the way, you'll traverse scenic trails, winding through lush forests, towering mountains, and serene lakeshores. Along the way, soak in the tranquility of pristine landscapes, breathe in the fresh mountain air, and marvel at panoramic vistas that stretch as far as the eye can see. Whether you're seeking a thrilling challenge or a peaceful retreat, there's something for everyone on this expedition. As the sun sets, gather around a crackling campfire to share stories, laughter, and a sense of camaraderie with fellow adventurers. With hearty meals cooked over an open flame and cozy nights spent under the stars, this hiking trip promises unforgettable memories that will last a lifetime. So lace up your boots, pack your sense of adventure, and join us for an unforgettable journey into the wilderness!
+                 
+                    </p>
+                    <p class="starting-time-paragraph">Starting time: %d:%d</p>
+                    <p class="starting-date-paragraph">Event Date: (mm/dd/yyyy) : 04/01/2024</p>
+                    <p class="event-location-paragraph">Location: Example street, sample city 2423</p>
+                   
                 </div>
-                <div class="container1">
-                    <div class="contactInfo">
-                        <div class="box">
-                            <div class="icon">
-                                <i class='bx bxs-map'></i>
-                            </div>
-                            <div class="text">
-                                <h3>Address</h3>
-                                <p>Szeged, Hungary, 6724 Sample Street 24.</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon">
-                                <i class='bx bx-phone' ></i>
-                            </div>
-                            <div class="text">
-                                <h3>Phone</h3>
-                                <p>+36 12 345 6789</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon">
-                                <i class='bx bxs-envelope' ></i>
-                            </div>
-                            <div class="text">
-                                <h3>Email</h3>
-                                <p>sample@sample.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contactForm">
-                        <form>
-                            <h2>
-                                Send Message
-                            </h2>
-                            <div class="inputBox">
-                                <input type="text" name="name" required placeholder="Full name">
-                                
-                            </div>
-                            <div class="inputBox">
-                                <input type="text" name="email" required placeholder="Email">
-                                
-                            </div>
-                            <div class="inputBox">
-                                <textarea  name="message" placeholder="Type your message" required></textarea>
-    
-                            </div>
-                            <div class="inputBox">
-                                <input type="submit" name="sub" value="Send">
-                            </div>
-                        </form>
-                        
-                    </div>
-                </div>
-            </section>
-        <script src="../js/paneldisplay.js"></script>
+                <form action="../php/signupforevent.php" id="eventSignupForm">
+                    <input type="submit" value="Sign up for this event">
+                </form>
+            </div>
+
+            <script src="../js/paneldisplay.js"></script>
         </main>
+         <!--footer starts here-->
         <footer>
             <div class="footer-container">
                 <div class="footer-brand-image-div">
@@ -172,9 +129,9 @@
                 <div class="footer-links-div">
                     <h2>Useful Links</h2>
                     <ul>
-                        <li data-page="homepage"><a href="../../index.php">Home</a></li>
-                        <li data-page="upcomingEvents"><a href="upcomingevent.html">Upcoming Events</a></li>
-                        <li data-page="contact"><a href="contact.html">Contact Us</a></li>
+                        <li><a href="../../index.php">Home</a></li>
+                        <li><a href="upcomingevent.php">Upcoming Events</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
 
                     </ul>
                 </div>
