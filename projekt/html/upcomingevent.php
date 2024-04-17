@@ -105,6 +105,21 @@
             <section class="upcoming-events-new-section">
                 <h2 class="upcoming-events-header">Upcoming Events</h2>
                 <div class="event-article-container">
+               
+               <?php
+                // upcoming_events.php
+
+                // Retrieve and display all upcoming events
+                // Example: Fetch events from database
+                $events = []; // Retrieve events from database or storage
+                $jsondata = file_get_contents("../json/events.json");
+        
+                $events = json_decode($jsondata,true);
+                foreach ($events as $event) {
+                    echo $event->generateEventArticle();
+                }
+                ?>
+
                     <article class="event-showcase-article-new">
                         <img src="../images/streetsoccer.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
                         <div class="event-sneak-peek-new">

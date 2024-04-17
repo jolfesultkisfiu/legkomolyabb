@@ -49,6 +49,7 @@
 
         // csak JPG, JPEG, WEBP és PNG kiterjesztésű képeket szeretnénk engedélyezni a feltöltéskor
         $validFileExtensions = ["jpg", "jpeg", "png", "webp"];
+        $fileToFetch;
           // a feltöltött fájl kiterjesztésének lekérdezése
          $extension = strtolower(pathinfo($_FILES["eventThumbnail"]["name"], PATHINFO_EXTENSION));
         if(in_array($extension, $validFileExtensions)){
@@ -67,6 +68,7 @@
                      // a fájl átmozgatása a cél útvonalra
                     if (move_uploaded_file($_FILES["eventThumbnail"]["tmp_name"], $targetPath)) {
                         echo "Successful upload! <br/>";
+                        $fileToFetch = $targetPath;
                     } else {
                         echo "<strong>Hiba:</strong> An error occured while trying to upload the file <br/>";
                     }
@@ -77,26 +79,28 @@
 
         // try to generate the image from the json
         //GENERATES IMG TAG FROM THE JSON FILE
-        $jsondata = file_get_contents("../json/events.json");
+        // $jsondata = file_get_contents("../json/events.json");
         
-        $decoded = json_decode($jsondata,true);
-        print_r($decoded);
-        echo "<br><br>";
-        $index=Event::$totalNumberOfEvents;
-        $fileNameFromJson = $decoded["events"][$index];
-        $fileToFetch = "";
-        foreach($fileNameFromJson as $key => $value) {
-            if(is_array($value)) {
-                foreach($value as $key2 => $value2) {
-                    echo $key2 . " => " . $value2 . "<br>";
-                    if($key2 == "name") {
-                        $fileToFetch = $value2; break;
-                    }
-                 }
-            }
+        // $decoded = json_decode($jsondata,true);
+        // print_r($decoded);
+        // echo "<br><br>";
+        // $index=Event::$totalNumberOfEvents;
+        // $fileNameFromJson = $decoded["events"][$index];
+        // $fileToFetch = "";
+        // foreach($fileNameFromJson as $key => $value) {
+        //     if(is_array($value)) {
+        //         foreach($value as $key2 => $value2) {
+        //             echo $key2 . " => " . $value2 . "<br>";
+        //             if($key2 == "name") {
+        //                 $fileToFetch = $value2; break;
+        //             }
+        //          }
+        //     }
            
-        }
-        $fetchPath = "../images/" . $fileToFetch;
+        // }
+        echo $fileToFetch;
+        echo "<br>";
+        $fetchPath = $fileToFetch;
       
         $event->setThumbnail($fetchPath);
 
@@ -104,7 +108,7 @@
 
      
 
-        print_r($event);
+       // print_r($event);
 
         echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
 
@@ -114,9 +118,50 @@
        $jsondata = file_get_contents("../json/events.json");
         
        $decoded = json_decode($jsondata,true);
-       print_r($decoded);
-       header("Location: ../html/upcomingevent.php");
-       echo $event->generateEventArticle();
+      // print_r($decoded);
+       //var_dump($decoded);
+      $eventData = $decoded["events"]["1"];
+      //var_dump($newEvent); 
+    //    foreach($decoded as $key => $value) {
+    //        foreach($value as $key2 => $value2){
+    //             foreach($value2 as $key3 => $value3){
+    //                 echo  $key3 . "=>". $value3 . "<br>";
+    //             }
+    //        }
+           
+    //     }
+          // Extract properties from event data
+          $i = 0;
+          $numberedArrayForAttributes = [];
+        foreach($eventData as $key => $value) {
+           // echo $key . "->>". $value . "<br>";
+            $numberedArrayForAttributes[$i] = $value;
+            $i++;
+        }
+
+        foreach($numberedArrayForAttributes as $key => $value) {
+            echo $key . "->>". $value . "<br>";
+        }
+        $eventData = $numberedArrayForAttributes;
+    $title = $eventData[0];
+    $details = $eventData[1];
+    $date = $eventData[2];
+    $startingTime = $eventData[3];
+    $thumbnail = $eventData[4];
+    $location = $eventData[5];
+    $numberOfPeopleSignedUp = $eventData[6];
+
+    // Create Event object using extracted data
+    $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+        var_dump($event);
+    // // Now you have an Event object representing the decoded JSON data
+    // // You can use $event object as needed (e.g., display details, manipulate, etc.)
+    // // Example usage:
+    // echo "Event Title: " . $event->getTitle() . "\n";
+    // echo "Event Date: " . $event->getDate() . "\n";
+    // // ...
+    //   header("Location: ../html/upcomingevent.php");
+      // echo $event->generateEventArticle();
 
     }
 }

@@ -11,7 +11,7 @@
         private $numberOfPeopleSignedUp;
         public static $totalNumberOfEvents = 0;
 
-        public function __construct($title, $details, $date, $startingTime, $thumbnail, $location) {
+        public function __construct($title, $details, $date, $startingTime, $thumbnail, $location, $signedup=0) {
             $this->title = $title;
             $this->details = $details;
             $this->date = $date;
@@ -19,7 +19,7 @@
             $this->thumbnail = $thumbnail;
             $this->location = $location;
             self::$totalNumberOfEvents++;
-            $this->numberOfPeopleSignedUp = 0;
+            $this->numberOfPeopleSignedUp = $signedup;
 
         }
 
