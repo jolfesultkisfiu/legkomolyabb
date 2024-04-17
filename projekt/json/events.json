@@ -1,19 +1,20 @@
 {
     "events": {
         "1": {
-            "\u0000Event\u0000title": "asder",
-            "\u0000Event\u0000details": "geadfe",
-            "\u0000Event\u0000date": "2025-04-03",
-            "\u0000Event\u0000startingTime": "04:30",
+            "\u0000Event\u0000title": "dgsgsdgd",
+            "\u0000Event\u0000details": "dgdgdgdgdgdsd",
+            "\u0000Event\u0000date": "2025-04-02",
+            "\u0000Event\u0000startingTime": "05:30",
             "\u0000Event\u0000thumbnail": {
-                "name": "Screenshot 2024-01-25 222023.png",
-                "full_path": "Screenshot 2024-01-25 222023.png",
+                "name": "Screenshot 2024-03-10 124554.png",
+                "full_path": "Screenshot 2024-03-10 124554.png",
                 "type": "image\/png",
-                "tmp_name": "C:\\xampp\\tmp\\php45B3.tmp",
+                "tmp_name": "C:\\xampp\\tmp\\phpE4CD.tmp",
                 "error": 0,
-                "size": 97459
+                "size": 291622
             },
-            "\u0000Event\u0000location": "fdffsdf"
+            "\u0000Event\u0000location": "gghghheeeee",
+            "\u0000Event\u0000numberOfPeopleSignedUp": 0
         }
     }
 }

@@ -103,7 +103,17 @@
            
         }
         $fetchPath = "../images/" . $fileToFetch;
-        echo "<img src = " . "\"$fetchPath\"" . "alt = 'event cover photo'" . ">";
+      
+        $event->setThumbnail($fetchPath);
+
+        $fp2 = $event->getThumbnail();
+
+     
+
+        print_r($event);
+
+        echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
+
     }
 }
 
