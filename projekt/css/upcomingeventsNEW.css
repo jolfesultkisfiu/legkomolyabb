@@ -16,10 +16,10 @@
 
 .event-article-container article:nth-of-type(even){
     margin-top: 6rem;
-    margin-bottom: -3rem;
+    margin-bottom: -2rem;
 }
 .event-article-container article:nth-of-type(odd){
-    margin-bottom: -3rem;
+    margin-bottom: -2rem;
 }
 
 .event-short-description-new {

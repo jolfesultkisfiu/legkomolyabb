@@ -139,7 +139,7 @@
                
                 ?>
 
-                    <article class="event-showcase-article-new">
+                    <!-- <article class="event-showcase-article-new">
                         <img src="../images/streetsoccer.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
                         <div class="event-sneak-peek-new">
                             <h2 class="event-title-new">Street Soccer Match</h2>
@@ -198,7 +198,7 @@
                         
                         </div>
                         <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
+                    </article> -->
                    
                 </div>
                

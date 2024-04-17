@@ -32,18 +32,29 @@
                 <div class="event-sneak-peek-new">
                     <h2 class="event-title-new">%s</h2>
                     <p class="event-short-description-new">%s</p>
-                    <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br>
+                    <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br><br>
                     Click on the double arrow to see more details!</p>
                 </div>
                 <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
             </article>
         ';
-
+        $displayDetailLength = 160;
+        if (strlen($this->getDetails()) > $displayDetailLength) {
+            return sprintf(
+                $html,
+                $this->getThumbnail(),
+                $this->getTitle(),
+                $small = substr($this->getDetails(), 0, 160) . "...",
+                $this->getDate(),
+                $this->getStartingTime()
+                //$this->getLocation()
+            );
+        }
         return sprintf(
             $html,
             $this->getThumbnail(),
             $this->getTitle(),
-            $this->getDetails(),
+            $small = substr($this->getDetails(), 0, 160) ,
             $this->getDate(),
             $this->getStartingTime()
             //$this->getLocation()

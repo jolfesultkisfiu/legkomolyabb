@@ -116,7 +116,7 @@
                                 <h4>Starting Time:</h4>
                                 <label for="selectHour">Hour:</label>
                                 <select size="24"  name="selectHour" id="selectHour" form="eventCreationForm">
-                                    <option value="00">0</option>
+                                    <option value="00" selected="selected">0</option>
                                     <option value="01">1</option>
                                     <option value="02">2</option>
                                     <option value="03">3</option>
@@ -143,7 +143,7 @@
                                 </select>
                                 <label for="selectMinute">Minutes:</label>
                                 <select name="selectMinute" id="selectMinute" size="60">
-                                    <option value="00">00</option>
+                                    <option value="00" selected="selected">00</option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
                                     <option value="03">03</option>
