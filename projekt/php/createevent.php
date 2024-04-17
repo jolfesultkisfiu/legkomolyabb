@@ -63,7 +63,11 @@
                        // ha már létezik ilyen nevű fájl a cél útvonalon, figyelmeztetést írunk ki
                     if (file_exists($targetPath)) {
                        // echo "<strong>Figyelem:</strong> A régebbi fájl felülírásra kerül! <br/>";
-                       $targetPath = "../images/" . Event::$totalNumberOfEvents . "." . $extension;
+                        $jsondata = file_get_contents("../json/events.json");
+                        $decoded = json_decode($jsondata,true);
+                        // echo "<br> ==== <br>";
+                        $lastEventIndex = array_key_last($decoded["events"]);
+                        $targetPath = "../images/" . $lastEventIndex . "." . $extension;
                     }
                      // a fájl átmozgatása a cél útvonalra
                     if (move_uploaded_file($_FILES["eventThumbnail"]["tmp_name"], $targetPath)) {
@@ -98,8 +102,7 @@
         //     }
            
         // }
-        echo $fileToFetch;
-        echo "<br>";
+       
         $fetchPath = $fileToFetch;
       
         $event->setThumbnail($fetchPath);
@@ -112,15 +115,21 @@
 
         echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
 
-        $assocArr["events"][$event::$totalNumberOfEvents] = (array) $event;
-        $jsondata = json_encode($assocArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        $jsondata = file_get_contents("../json/events.json");
+        $decoded = json_decode($jsondata,true);
+       // echo "<br> ==== <br>";
+        $lastEventIndex = array_key_last($decoded["events"]);
+       // echo "<br> ==== <br>";
+        $decoded["events"][] = (array) $event;
+       // $assocArr["events"][$lastEventIndex + 1] = (array) $event;
+        $jsondata = json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
        file_put_contents("../json/events.json",$jsondata);
        $jsondata = file_get_contents("../json/events.json");
         
        $decoded = json_decode($jsondata,true);
       // print_r($decoded);
        //var_dump($decoded);
-      $eventData = $decoded["events"]["1"];
+     // $eventData = $decoded["events"][$lastEventIndex];
       //var_dump($newEvent); 
     //    foreach($decoded as $key => $value) {
     //        foreach($value as $key2 => $value2){
@@ -131,36 +140,38 @@
            
     //     }
           // Extract properties from event data
-          $i = 0;
-          $numberedArrayForAttributes = [];
-        foreach($eventData as $key => $value) {
-           // echo $key . "->>". $value . "<br>";
-            $numberedArrayForAttributes[$i] = $value;
-            $i++;
-        }
+         
+        //   $numberedArrayForAttributes = [];
+        // foreach($decoded["events"] as $key => $value) {
+        //     $i = 0;
+        //     foreach($value as $key1 => $value1) {
+        //         // echo $key . "->>". $value . "<br>";
+        //          $numberedArrayForAttributes[$i] = $value1;
+        //          $i++;
+        //      }
+        //     $title = $numberedArrayForAttributes[0];
+        //     $details = $numberedArrayForAttributes[1];
+        //     $date = $numberedArrayForAttributes[2];
+        //     $startingTime = $numberedArrayForAttributes[3];
+        //     $thumbnail = $numberedArrayForAttributes[4];
+        //     $location = $numberedArrayForAttributes[5];
+        //     $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
 
-        foreach($numberedArrayForAttributes as $key => $value) {
-            echo $key . "->>". $value . "<br>";
-        }
-        $eventData = $numberedArrayForAttributes;
-    $title = $eventData[0];
-    $details = $eventData[1];
-    $date = $eventData[2];
-    $startingTime = $eventData[3];
-    $thumbnail = $eventData[4];
-    $location = $eventData[5];
-    $numberOfPeopleSignedUp = $eventData[6];
+        //    // Create Event object using extracted data
+        //     $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+        //     var_dump($event);
+        // }   
+       
 
-    // Create Event object using extracted data
-    $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
-        var_dump($event);
+      
+    
     // // Now you have an Event object representing the decoded JSON data
     // // You can use $event object as needed (e.g., display details, manipulate, etc.)
     // // Example usage:
     // echo "Event Title: " . $event->getTitle() . "\n";
     // echo "Event Date: " . $event->getDate() . "\n";
     // // ...
-    //   header("Location: ../html/upcomingevent.php");
+      header("Location: ../html/upcomingevent.php");
       // echo $event->generateEventArticle();
 
     }

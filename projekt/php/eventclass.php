@@ -32,9 +32,10 @@
                 <div class="event-sneak-peek-new">
                     <h2 class="event-title-new">%s</h2>
                     <p class="event-short-description-new">%s</p>
-                    <p class="instructions-to-view-details-new">Date: %s, Time: %s, Location: %s</p>
+                    <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br>
+                    Click on the double arrow to see more details!</p>
                 </div>
-                <a href="eventdetails.php" class="event-details-link-new" title="Event Details">View Details</a>
+                <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
             </article>
         ';
 
@@ -44,8 +45,8 @@
             $this->getTitle(),
             $this->getDetails(),
             $this->getDate(),
-            $this->getStartingTime(),
-            $this->getLocation()
+            $this->getStartingTime()
+            //$this->getLocation()
         );
     }
 

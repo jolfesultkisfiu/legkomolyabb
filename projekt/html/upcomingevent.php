@@ -108,16 +108,35 @@
                
                <?php
                 // upcoming_events.php
-
+                require_once "../php/eventclass.php";
+  
                 // Retrieve and display all upcoming events
                 // Example: Fetch events from database
-                $events = []; // Retrieve events from database or storage
+               // $events = []; // Retrieve events from database or storage
                 $jsondata = file_get_contents("../json/events.json");
         
-                $events = json_decode($jsondata,true);
-                foreach ($events as $event) {
+                $decoded = json_decode($jsondata,true);
+                $numberedArrayForAttributes = [];
+                foreach($decoded["events"] as $key => $value) {
+                    $i = 0;
+                    foreach($value as $key1 => $value1) {
+                        // echo $key . "->>". $value . "<br>";
+                         $numberedArrayForAttributes[$i] = $value1;
+                         $i++;
+                     }
+                    $title = $numberedArrayForAttributes[0];
+                    $details = $numberedArrayForAttributes[1];
+                    $date = $numberedArrayForAttributes[2];
+                    $startingTime = $numberedArrayForAttributes[3];
+                    $thumbnail = $numberedArrayForAttributes[4];
+                    $location = $numberedArrayForAttributes[5];
+                    $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
+        
+                   // Create Event object using extracted data
+                    $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
                     echo $event->generateEventArticle();
-                }
+                }   
+               
                 ?>
 
                     <article class="event-showcase-article-new">
