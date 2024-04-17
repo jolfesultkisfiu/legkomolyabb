@@ -45,13 +45,7 @@
        echo '<p>The image has been uploaded successfully</p><p>Preview:</p><img src="' . $sImage . '" alt="Your Image" />';
       */
         
-       $assocArr["events"][$event::$totalNumberOfEvents] = (array) $event;
-        $jsondata = json_encode($assocArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-       file_put_contents("../json/events.json",$jsondata);
-       $jsondata = file_get_contents("../json/events.json");
-        
-       $decoded = json_decode($jsondata,true);
-       print_r($decoded);
+      
 
         // csak JPG, JPEG, WEBP és PNG kiterjesztésű képeket szeretnénk engedélyezni a feltöltéskor
         $validFileExtensions = ["jpg", "jpeg", "png", "webp"];
@@ -113,6 +107,16 @@
         print_r($event);
 
         echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
+
+        $assocArr["events"][$event::$totalNumberOfEvents] = (array) $event;
+        $jsondata = json_encode($assocArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+       file_put_contents("../json/events.json",$jsondata);
+       $jsondata = file_get_contents("../json/events.json");
+        
+       $decoded = json_decode($jsondata,true);
+       print_r($decoded);
+       header("Location: ../html/upcomingevent.php");
+       echo $event->generateEventArticle();
 
     }
 }

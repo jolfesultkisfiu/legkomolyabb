@@ -5,14 +5,7 @@
             "\u0000Event\u0000details": "dgdgdgdgdgdsd",
             "\u0000Event\u0000date": "2025-04-02",
             "\u0000Event\u0000startingTime": "05:30",
-            "\u0000Event\u0000thumbnail": {
-                "name": "Screenshot 2024-03-10 124554.png",
-                "full_path": "Screenshot 2024-03-10 124554.png",
-                "type": "image\/png",
-                "tmp_name": "C:\\xampp\\tmp\\phpE4CD.tmp",
-                "error": 0,
-                "size": 291622
-            },
+            "\u0000Event\u0000thumbnail": "..\/images\/",
             "\u0000Event\u0000location": "gghghheeeee",
             "\u0000Event\u0000numberOfPeopleSignedUp": 0
         }

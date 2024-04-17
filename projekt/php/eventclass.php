@@ -23,6 +23,32 @@
 
         }
 
+          // Generate HTML article for the event
+    public function generateEventArticle()
+    {
+        $html = '
+            <article class="event-showcase-article-new">
+                <img src="%s" class="event-thumbnail-display-new" alt="event thumbnail">
+                <div class="event-sneak-peek-new">
+                    <h2 class="event-title-new">%s</h2>
+                    <p class="event-short-description-new">%s</p>
+                    <p class="instructions-to-view-details-new">Date: %s, Time: %s, Location: %s</p>
+                </div>
+                <a href="eventdetails.php" class="event-details-link-new" title="Event Details">View Details</a>
+            </article>
+        ';
+
+        return sprintf(
+            $html,
+            $this->getThumbnail(),
+            $this->getTitle(),
+            $this->getDetails(),
+            $this->getDate(),
+            $this->getStartingTime(),
+            $this->getLocation()
+        );
+    }
+
 
         public function getNumberOfPeopleSignedUp(){
             return $this->numberOfPeopleSignedUp;
