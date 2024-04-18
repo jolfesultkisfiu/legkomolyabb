@@ -6,6 +6,16 @@
     box-sizing: border-box;
     font-family: "Poppins","sans-serif";
 }
+.wrapper .error {
+    margin-top: 0;
+    color: red;
+    margin-bottom: 10px;
+    font-size: 80%;
+}
+.center {
+    text-align: center;
+    font-size: 140%;
+}
 
 body{
     display: flex;
