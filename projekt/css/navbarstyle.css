@@ -56,6 +56,7 @@
     
 
 }
+
 .nav-container li:hover{
     background-color: royalblue;
     transition: 0.56s;
@@ -239,6 +240,7 @@
         overflow:hidden;
         
     }
+
    .dropdown-panel li a {
     padding: 1rem 1rem 1rem 90%;
     margin-right: 0;

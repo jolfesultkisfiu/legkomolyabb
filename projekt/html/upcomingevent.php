@@ -29,32 +29,46 @@
         <link rel="stylesheet" href="../css/upcomingeventsNEW.css">
     </head>
     <body id="upcomingEvents">
-        <header>
+    <header>
         <nav>
             <ul class="nav-container">
                 <li data-page="homepage"><a href="../../index.php">Home</a></li>
                 <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
-                <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
+                <?php
+                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                    echo '<li data-page="createEvent"><a href="createevent.php">Create Event</a></li>';
+                }
+                ?>
+
+
                 <li class="search-bar-li">
-                        
+
+
                     <a class="search-anchor" href="../../index.php">Search for an Event</a>
-                       
+
+
                     <div class="search-bar-container">
-                        <div class="search-bar">   
+                        <div class="search-bar">
                             <div class="search-icon"></div>
                             <form action="../php/search.php" method="post" class="search-form">
                                 <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                <button  class="search-button" type="submit" value="Search">Search</button> 
+                                <button  class="search-button" type="submit" value="Search">Search</button>
 
                             </form>
-                        
+
                         </div>
                     </div>
                 </li>
-             
-
+                <?php
+                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                    echo '<li data-page="logout"><a href="logout.php">Log out</a></li>';
+                }
+                ?>
                 <li id="loginLi"><a href="login.php">Log In</a></li>
                 <li id="registerLi"><a href="register.php">Register</a></li>
+
+
+
 
                 <li class="dropdown-li">
                     <div class="dropdown-menu" id="dropdownHamburger">
@@ -64,39 +78,50 @@
                     </div>
                     <div class="dropdown-panel" id="dropdownPanelId">
                         <ul class="dropdown-panel-list" id="dropdownPanelList">
-                            
+
                             <li class="mobile-search-li">
                                 <div class="search-bar-container" id="panelSearchBar">
-                                    <div class="search-bar">   
+                                    <div class="search-bar">
                                         <!--<div class="search-icon"></div>-->
                                         <form action="../php/search.php" method="post" class="search-form">
                                             <input class="search-box" type="search" name="search" placeholder="Search for an event...">
-                                            <button  class="search-button" type="submit" value="Search"></button> 
-                
+                                            <button  class="search-button" type="submit" value="Search"></button>
+
                                         </form>
-                                    
+
                                     </div>
                                 </div>
                             </li>
                             <li>  <a class="search-anchor" href="../../index.php">Search for an Event</a>
                             </li>
                             <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
-                            <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
-                        
-                        
-        
+                            <?php
+                            if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                echo ' <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>';
+                            }
+                            ?>
+
+
+
                             <li><a href="login.php">Log In</a></li>
                             <li><a href="register.php">Register</a></li>
+                            <?php
+                            if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                echo '<li><a href="logout.php">Log out</a></li>';
+                            }
+                            ?>
 
-                        
+
+
+
                         </ul>
-                    
+
                     </div>
                 </li>
             </ul>
 
         </nav>
-        </header>
+    </header>
         <main>
 
             
