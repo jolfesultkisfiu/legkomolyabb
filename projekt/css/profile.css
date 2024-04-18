@@ -280,4 +280,7 @@ button {
     button {
         max-width: 80vw !important;
     }
+    .delete-container {
+        padding: 0px 1rem;
+    }
 }
