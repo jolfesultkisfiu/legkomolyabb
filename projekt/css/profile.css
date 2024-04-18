@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins","sans-serif";
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/calm.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-profile-hero {
+    text-align: center;
+    color: #fff;
+}
+
+.main-header {
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.wrapper{
+
+    margin: 25vh;
+    display: flex;
+    flex-wrap: wrap;
+   justify-items: center;
+    flex-direction: column;
+    width: 67vw;
+    min-width: 67vw;
+    background-color: transparent;
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 010px rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 10px;
+    padding:2rem 0px;
+}
+
+.data-container {
+    
+    /*display: flex;
+    justify-content: flex-start;
+    flex-direction: row; */
+
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+   
+   
+}
+
+.horizontal-div {
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 10px;
+    height: 2px;
+    width: calc(inherit - 1.98rem);
+
+    margin: 2rem 2rem;   
+}
+
+.vertical-divide{
+    height: 25rem;
+    width: 2px;
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.profile-pic-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0rem 2rem;
+  
+    
+}
+
+.profile-pic-img{
+    height: 14.4rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 010px rgba(0,0,0,.2);
+}
+
+.profile-pic-wrapper form {
+
+    display: flex;
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+   
+}
+
+
+.profile-pic-wrapper form button {
+    margin-top: 2rem;
+   
+}
+.profile-pic-wrapper form input {
+  margin-left: 3.4rem;
+  margin-top: 0.4rem;
+ 
+   
+}
+input[type="file"]::file-selector-button {
+    /* Styling for file input button */
+    background: #fff;
+    border:none;
+    outline:none;
+    border-radius: 40px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    padding: 4px 10px;
+}
+
+
+
+.profile-data {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.profile-data button {
+    margin-top: 0.60rem;
+}
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+#deleteAccountForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    text-align: center;
+}
+
+#deleteAccountForm button {
+    margin: 1rem 0px;
+}
+
+
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin:30px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline:none;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    font-size:16px;
+    color:#fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color:#fff;
+}
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:20px;    
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border:none;
+    outline:none;
+    border-radius: 40px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.delete-button {
+    background-color: rgba(255, 81, 81, 0.961);
+}
+
+@media (max-width:1150px) {
+    .wrapper {
+        width: 88vw;
+    }
+}
+@media (max-width:875px) {
+    .wrapper {
+        width: 100vw;
+        margin-top: 2rem;
+    }
+    .data-container {
+    
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .main-header {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    button {
+        max-width: 80vw;
+    }
+
+    .vertical-divide {
+        background-color: rgba(255,255,255,.2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        color: #fff;
+        border-radius: 10px;
+        height: 2px;
+        width: 70vw;
+    
+        margin: 2rem 2rem;   
+    }
+}
+
+@media (max-width:400px) {
+    .wrapper {
+        padding: 0px;
+        margin-top: 1rem;
+        width: 100vw;
+        display: block;
+
+    }
+    .data-container {
+        padding: 1rem 0px 0px 0px;
+
+
+    }
+    h1 {
+        font-size: 2rem !important;
+        margin-bottom: 3rem !important;
+    }
+    .delete-button {
+        width: 82%;
+    }
+    button {
+        max-width: 80vw !important;
+    }
+}
