@@ -159,6 +159,31 @@ session_start();
             if (isset($_GET['id'])) {
                 $eventId = $_GET['id'];
 
+                $currentUser = $_SESSION["username"];
+
+                $usersjsondata = file_get_contents("../json/users.json");
+                $usersdecoded = json_decode($usersjsondata,true);
+       
+                $foundUser = false;
+                $currentSignedUps = [];
+               foreach($usersdecoded as &$key) {
+                 //  var_dump($key);
+                   //var_dump($key["signedUpEvents"]);
+                   foreach($key as &$key2) {
+                  //   var_dump($key2);
+                     if($key2 === $currentUser) {
+                   //   echo "BINGO";
+                       $foundUser = true;
+                     }
+                   }
+                   if($foundUser) {
+                      
+                     $currentSignedUps = $key["signedUpEvents"];
+                   }
+       
+       
+               }
+              
 
                 // Retrieve event details based on event ID (e.g., from database or storage)
                
@@ -190,8 +215,15 @@ session_start();
               //  print_r($event);
 
                 if ($event) {
+
+                    if(in_array($eventId,$currentSignedUps)) {
+                        echo $event->generateEventDetailsHTMLSignedUp();
+                    }
+                    else {
+                        echo $event->generateEventDetailsHTML();
+                    }
                     
-                  echo $event->generateEventDetailsHTML();
+                
                     // Display other event details as needed
                 } else {
                     echo '<p>Event not found.</p>';

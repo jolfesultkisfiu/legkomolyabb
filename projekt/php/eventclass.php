@@ -65,6 +65,49 @@
         return $formattedHtml;
     }
 
+
+
+          // Method to generate HTML for event details
+          public function generateEventDetailsHTMLSignedUp()
+          {
+              // Format starting time (e.g., convert "12:30" to hour and minute integers)
+              $startingTime = $this->getStartingTime();
+             // list($hour, $minute) = explode(':', $startingTime);
+             $eventId = $this->getEventId();
+      
+              // Prepare HTML string with event attributes
+              $html = '
+                  <div class="event-details-container">
+                      <img src="%s" alt="Event thumbnail">
+                      <h2>%s</h2>
+                      <div class="event-info">
+                          <p class="detailed-info-paragraph">%s</p>
+                          <p class="starting-time-paragraph">Starting time: %s</p>
+                          <p class="starting-date-paragraph">Event Date (mm/dd/yyyy): %s</p>
+                          <p class="event-location-paragraph">Location: %s</p>
+                      </div>
+                      <form action="../php/unsubfromevent.php" id="eventSignupForm">
+                          <input type="hidden" name="eventId" value="%s">
+                          <input type="submit" value="Unsubscribe From This Event">
+                      </form>
+                  </div>
+              ';
+      
+              // Replace placeholders in HTML string with event attributes
+              $formattedHtml = sprintf(
+                  $html,
+                  $this->getThumbnail(),
+                  $this->getTitle(),
+                  $this->getDetails(),
+                  $startingTime,
+                  date('m/d/Y', strtotime($this->getDate())),
+                  $this->getLocation(),
+                  $eventId // Assuming you have a method getId() to retrieve event ID
+              );
+      
+              return $formattedHtml;
+          }
+
       
           // Generate HTML article for the event
     public function generateEventArticle()
