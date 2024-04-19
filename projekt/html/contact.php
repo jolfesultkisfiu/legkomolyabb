@@ -1,5 +1,32 @@
 <?php
 session_start();
+$errors=[];
+$success=false;
+if(isset($_POST["sub"])){
+    $name=$_POST["name"];
+    $email=$_POST["email"];
+    $message=$_POST["message"];
+
+    if(trim($name)===""){
+        $errors[]="empty name";
+    }
+    if(trim($email)===""){
+        $errors[]="empty email";
+    }
+    if(trim($message)===""){
+        $errors[]="empty message";
+    }
+    if(strpos($email,"@")===false){
+        $errors[]="bad email";
+    }
+
+    if(count($errors)===0){
+        include ("../php/Templates/Message.php");
+        new Message($name,$email,$message);
+        $success=true;
+    }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -191,25 +218,48 @@ session_start();
                         </div>
                     </div>
                     <div class="contactForm">
-                        <form>
+                        <form method="post">
                             <h2>
                                 Send Message
                             </h2>
                             <div class="inputBox">
                                 <input type="text" name="name" required placeholder="Full name">
-                                
                             </div>
+                            <?php
+                            if(in_array("empty name",$errors)){
+                                echo '<div class="error center">Üres nevet adtál meg</div>';
+                            }
+                            ?>
                             <div class="inputBox">
                                 <input type="text" name="email" required placeholder="Email">
                                 
                             </div>
+                            <?php
+                            if(in_array("empty email",$errors)){
+                                echo '<div class="error center">Üres emailt adtál meg</div>';
+                            }
+                            ?>
+                            <?php
+                            if(in_array("bad email",$errors)){
+                                echo '<div class="error center">Rossz az email formátuma!</div>';
+                            }
+                            ?>
                             <div class="inputBox">
                                 <textarea  name="message" placeholder="Type your message" required></textarea>
-    
                             </div>
+                            <?php
+                            if(in_array("empty message",$errors)){
+                                echo '<div class="error center">Üres üzenetet nevet adtál meg</div>';
+                            }
+                            ?>
                             <div class="inputBox">
                                 <input type="submit" name="sub" value="Send">
                             </div>
+                            <?php
+                            if($success){
+                                echo '<div class="success center">Sikeres üzenetküldés!</div>';
+                            }
+                            ?>
                         </form>
                         
                     </div>

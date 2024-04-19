@@ -17,6 +17,22 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
+.center {
+    text-align: center;
+    font-size: 140%;
+}
+.success{
+    margin-top: 0;
+    color: #207210;
+    margin-bottom: 10px;
+    font-size: 80%;
+}
+.error {
+    margin-top: 0;
+    color: red;
+    margin-bottom: 10px;
+    font-size: 80%;
+}
 .contact .content{
     max-width: 800px;
     text-align: center;

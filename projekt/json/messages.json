@@ -1,0 +1,20 @@
+[
+    {
+        "email": "valami@baj",
+        "id": 1,
+        "message": "f",
+        "name": "Tóth Gergő"
+    },
+    {
+        "id": 2,
+        "name": "TG",
+        "email": "valami@tg.com",
+        "message": "Nagyon szar az oldal"
+    },
+    {
+        "id": 3,
+        "name": "TG",
+        "email": "valami@tg.com",
+        "message": "Nagyon szar az oldal"
+    }
+]
