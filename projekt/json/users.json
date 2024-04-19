@@ -18,5 +18,10 @@
         "id": 4,
         "password": "$2y$10$.sGa0J2Gd6QqHwF3vVuxOOL82iFf\/G6fWm7Jo1uKs1jZq6J.UmngG",
         "username": "_toth_patricia"
+    },
+    {
+        "id": 5,
+        "password": "$2y$10$rfVf0xc5ITw5Pk3Z3NpLZet187Ez8eIDtEU8qPBddZCvoWIhxrc3W",
+        "username": "test"
     }
 ]
