@@ -224,47 +224,75 @@ if(isset($_POST["search"])){
             
             <section class="upcoming-events-new-section">
                 <?php
+
+                require_once "projekt/php/eventclass.php";
+  
+
                 if(empty($arr["events"])){
                     echo '<h2 class="upcoming-events-header">There are no events that match your filters.</h2>';
                 }else{
                     echo '<h2 class="upcoming-events-header">Listed Events</h2>';
 
                     echo '<div class="event-article-container">';
+                   //print_r($arr["events"]);
+                    foreach ($arr["events"] as $key => $value){
 
-                    foreach ($arr["events"] as $data){
-                        $src="";
-                        $title="";
-                        $details="";
-                        $i=0;
-                        foreach ($data as $d){
-
-                            if($i===0){
-                                $title=$d;
-                            }
-                            if($i===1){
-                                $details=$d;
-                            }
-                            if($i===4){
-                                $src=$d;
-                            }
+                        $eventId = $key;
+                        $i = 0;
+                        $numberedArrayForAttributes=[];
+                    // echo $key . "<br>";
+                        foreach($value as $key1 => $value1) {
+                            // echo $key . "->>". $value . "<br>";
+                            $numberedArrayForAttributes[$i] = $value1;
                             $i++;
                         }
-                        $title=str_replace("'"," ",$title);
-                        $details=str_replace("'"," ",$details);
-                        $src=explode("/",$src);
-                        $src[0]="projekt";
-                        $src[1]="/images/";
-                        $src = implode("", $src);
+                        $title = $numberedArrayForAttributes[0];
+                        $details = $numberedArrayForAttributes[1];
+                        $date = $numberedArrayForAttributes[2];
+                        $startingTime = $numberedArrayForAttributes[3];
+                        $thumbnail = $numberedArrayForAttributes[4];
+                        $location = $numberedArrayForAttributes[5];
+                        $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
+            
+                    // Create Event object using extracted data
+                        $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+                       // print_r($event);
+                      //  $event->setEventId($eventId);
+                        echo $event->generateEventArticleFromIndex();
 
-                        echo '<article class="event-showcase-article-new">
-                        <img src="'.$src.'" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">'.$title.'</h2>
-                            <p class="event-short-description-new">'.$details.'</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>';
+                    //     $src="";
+                    //     $title="";
+                    //     $details="";
+                    //     $i=0;
+                    //     foreach ($data as $d){
+
+                    //         if($i===0){
+                    //             $title=$d;
+                    //         }
+                    //         if($i===1){
+                    //             $details=$d;
+                    //         }
+                    //         if($i===4){
+                    //             $src=$d;
+                    //         }
+                    //         $i++;
+                    //     }
+                    //     $title=str_replace("'"," ",$title);
+                    //     $details=str_replace("'"," ",$details);
+                    //     $src=explode("/",$src);
+                    //     $src[0]="projekt";
+                    //     $src[1]="/images/";
+                    //     $src = implode("", $src);
+
+                    //     echo '<article class="event-showcase-article-new">
+                    //     <img src="'.$src.'" class="event-thumbnail-display-new" alt="event thumnbail">
+                    //     <div class="event-sneak-peek-new">
+                    //         <h2 class="event-title-new">'.$title.'</h2>
+                    //         <p class="event-short-description-new">'.$details.'</p>
+                    //         <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
+                    //     </div>
+                    //     <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
+                    // </article>';
                     }
                 }
 
