@@ -78,11 +78,20 @@ if(isset($_POST["search"])){
                     </li>
                     <?php
                     if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                        echo '<li data-page="logout"><a href="projekt/html/logout.php">Log out</a></li>';
+                        echo '<li id="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
                     }
                     ?>
-                    <li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>
-                    <li id="registerLi"><a href="projekt/html/register.php">Register</a></li>
+                    <?php
+                    if(!isset($_SESSION["started"])){
+                        echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
+                    }
+                    ?>
+                    <?php
+                    if(!isset($_SESSION["started"])){
+                        echo '<li id="registerLi"><a href="projekt/html/register.php">Register</a></li>';
+                    }
+                    ?>
+
 
 
     
@@ -119,11 +128,19 @@ if(isset($_POST["search"])){
 
 
 
-                                <li><a href="projekt/html/login.php">Log In</a></li>
-                                <li><a href="projekt/html/register.php">Register</a></li>
                                 <?php
                                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                    echo '<li><a href="projekt/html/logout.php">Log out</a></li>';
+                                    echo '<li id="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
+                                }
+                                ?>
+                                <?php
+                                if(!isset($_SESSION["started"])){
+                                    echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
+                                }
+                                ?>
+                                <?php
+                                if(!isset($_SESSION["started"])){
+                                    echo '<li id="registerLi"><a href="projekt/html/register.php">Register</a></li>';
                                 }
                                 ?>
 
