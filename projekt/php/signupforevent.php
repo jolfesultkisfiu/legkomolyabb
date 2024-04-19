@@ -11,6 +11,18 @@
          $decoded = json_decode($jsondata,true);
 
 
+         $usersjsondata = file_get_contents("../json/users.json");
+         $usersdecoded = json_decode($usersjsondata,true);
+
+         foreach($usersdecoded as $key) {
+            
+            foreach($key as $key2 => $value2) {
+              echo $value2;
+            }
+         }
+
+
+
          $i = 0;
          // echo $key . "<br>";
           foreach($decoded["events"][$eventId] as &$key1) {

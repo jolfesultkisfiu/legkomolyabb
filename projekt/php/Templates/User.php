@@ -4,6 +4,13 @@ class User{
     private  $jelszo;
     private $username;
     private $ownid;
+    private $signedUpEvents; //array
+    private $isSubscribed; //boolean
+
+
+
+    
+
 
 
     /**
@@ -24,11 +31,16 @@ class User{
         $this->jelszo = $jelszo;
         $this->username = $username;
 
+        $this->$signedUpEvents = [];
+        $this->isSubscribed = false;
+
     }
 
     /**
      * @return mixed
      */
+
+    
 
     public function getOwnid()
     {
@@ -102,6 +114,25 @@ class User{
     {
         $this->username = $username;
     }
+
+    public function getSignedUpEvents(){
+        return $this->signedUpEvents;
+    }
+
+
+    public function setSignedUpEvents($signedUpEvents){
+        $this->signedUpEvents = $signedUpEvents;
+    }
+
+    public function getIsSubscribed(){
+        return $this->isSubscribed;
+    }
+
+
+    public function setIsSubscribed($isSubscribed){
+        $this->isSubscribed = $isSubscribed;
+    }
+
 
 }
 
