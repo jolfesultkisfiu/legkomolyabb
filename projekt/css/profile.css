@@ -16,6 +16,19 @@ body{
     background-position: center;
 }
 
+.name-paragraph {
+    font-weight: bold;
+}
+
+.home-anchor {
+    color:#fff !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+.home-anchor:hover{
+   text-decoration: underline;
+}
+
 .main-profile-hero {
     text-align: center;
     color: #fff;
