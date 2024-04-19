@@ -23,6 +23,7 @@
 
         }
 
+      
           // Generate HTML article for the event
     public function generateEventArticle()
     {

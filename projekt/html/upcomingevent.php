@@ -134,6 +134,34 @@
                <?php
                 // upcoming_events.php
                 require_once "../php/eventclass.php";
+
+
+
+                   // Custom comparison function for sorting events by date and starting time
+        function compareEvents($event1, $event2)
+        {
+            $date1 = $event1->getDate();
+            $date2 = $event2->getDate();
+            $startingTime1 = $event1->getStartingTime();
+            $startingTime2 = $event2->getStartingTime();
+
+            // Compare dates first
+            if ($date1 < $date2) {
+                return -1; // $event1 comes before $event2
+            } elseif ($date1 > $date2) {
+                return 1; // $event1 comes after $event2
+            } else {
+                // Dates are the same, compare starting times
+                if ($startingTime1 < $startingTime2) {
+                    return -1; // $event1 comes before $event2
+                } elseif ($startingTime1 > $startingTime2) {
+                    return 1; // $event1 comes after $event2
+                } else {
+                    return 0; // $event1 and $event2 are the same
+                }
+            }
+        }
+
   
                 // Retrieve and display all upcoming events
                 // Example: Fetch events from database
@@ -142,6 +170,9 @@
         
                 $decoded = json_decode($jsondata,true);
                 $numberedArrayForAttributes = [];
+
+                $events = [];
+
                 foreach($decoded["events"] as $key => $value) {
                     $i = 0;
                     foreach($value as $key1 => $value1) {
@@ -159,9 +190,14 @@
         
                    // Create Event object using extracted data
                     $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
-                    echo $event->generateEventArticle();
+                    $events[] = $event;
+                   // echo $event->generateEventArticle();
                 }   
-               
+                // Sort the events array using the custom comparison function
+                usort($events, 'compareEvents');
+                foreach($events as $event) {
+                    echo $event->generateEventArticle();
+                }
                 ?>
 
                     <!-- <article class="event-showcase-article-new">
