@@ -61,6 +61,11 @@ session_start();
                     }
                     ?>
                     <?php
+                    if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                        echo '<li id="registerLi"><a href="profile.html">Profile</a></li>';
+                    }
+                    ?>
+                    <?php
                     if(!isset($_SESSION["started"])){
                         echo '<li id="loginLi"><a href="login.php">Log In</a></li>';
                     }
