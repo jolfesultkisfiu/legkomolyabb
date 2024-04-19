@@ -170,11 +170,14 @@
         
                 $decoded = json_decode($jsondata,true);
                 $numberedArrayForAttributes = [];
+                
+
 
                 $events = [];
 
                 foreach($decoded["events"] as $key => $value) {
                     $i = 0;
+                   // echo $key . "<br>";
                     foreach($value as $key1 => $value1) {
                         // echo $key . "->>". $value . "<br>";
                          $numberedArrayForAttributes[$i] = $value1;

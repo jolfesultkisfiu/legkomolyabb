@@ -1,7 +1,7 @@
 <?php 
 
     class Event { //default class visibility is public, you do not have to specify it
-
+        
         private $title;
         private $details;
         private $date;
@@ -27,6 +27,36 @@
           // Generate HTML article for the event
     public function generateEventArticle()
     {
+        $jsondata = file_get_contents("../json/events.json");
+        
+        $decoded = json_decode($jsondata,true);
+
+        $eventId = 0;
+
+        foreach($decoded["events"] as $key => $value){
+            $i = 0;
+           // echo $key . "<br>";
+            foreach($value as $key1 => $value1) {
+                // echo $key . "->>". $value . "<br>";
+                 $numberedArrayForAttributes[$i] = $value1;
+                 $i++;
+             }
+            $title = $numberedArrayForAttributes[0];
+            $details = $numberedArrayForAttributes[1];
+            $date = $numberedArrayForAttributes[2];
+            $startingTime = $numberedArrayForAttributes[3];
+            $thumbnail = $numberedArrayForAttributes[4];
+            $location = $numberedArrayForAttributes[5];
+            $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
+
+           // Create Event object using extracted data
+            $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+            if ($event == $this) {
+                $eventId = $key;
+                break;
+            }
+        }
+
         $html = '
             <article class="event-showcase-article-new">
                 <img src="%s" class="event-thumbnail-display-new" alt="event thumbnail">
@@ -36,7 +66,7 @@
                     <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br><br>
                     Click on the double arrow to see more details!</p>
                 </div>
-                <a href="eventdetails.php" class="event-details-link-new" title="Event Details"></a>
+                <a href="eventdetails.php?id=%s" class="event-details-link-new" title="Event Details"></a>
             </article>
         ';
         $displayDetailLength = 160;
@@ -47,7 +77,8 @@
                 $this->getTitle(),
                 $small = substr($this->getDetails(), 0, 160) . "...",
                 $this->getDate(),
-                $this->getStartingTime()
+                $this->getStartingTime(),
+                $eventId
                 //$this->getLocation()
             );
         }
@@ -57,7 +88,8 @@
             $this->getTitle(),
             $small = substr($this->getDetails(), 0, 160) ,
             $this->getDate(),
-            $this->getStartingTime()
+            $this->getStartingTime(),
+            $eventId
             //$this->getLocation()
         );
     }
