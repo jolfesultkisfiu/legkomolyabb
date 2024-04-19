@@ -1,3 +1,19 @@
+<?php
+session_start();
+if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+    echo $_SESSION["started"];
+}
+
+if(isset($_POST["search"])){
+    $time=$_POST["time"];
+    $location=$_POST["location"];
+    $type=$_POST["type"];
+    $music=$_POST["music"];
+    echo $time;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,7 +51,13 @@
                 <ul class="nav-container">
                     <li data-page="homepage"><a href="index.php">Home</a></li>
                     <li data-page="upcomingEvents"><a href="projekt/html/upcomingevent.php">Upcoming Events</a></li>
-                    <li data-page="createEvent"><a href="projekt/html/createevent.php">Create Event</a></li>
+                    <?php
+                    if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                       echo '<li data-page="createEvent"><a href="projekt/html/createevent.php">Create Event</a></li>';
+                    }
+                    ?>
+
+
                     <li class="search-bar-li">
 
                             
@@ -54,10 +76,15 @@
                             </div>
                         </div>
                     </li>
-                 
-    
+                    <?php
+                    if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                        echo '<li data-page="logout"><a href="projekt/html/logout.php">Log out</a></li>';
+                    }
+                    ?>
                     <li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>
                     <li id="registerLi"><a href="projekt/html/register.php">Register</a></li>
+
+
     
                     <li class="dropdown-li">
                         <div class="dropdown-menu" id="dropdownHamburger">
@@ -84,13 +111,24 @@
                                 <li>  <a class="search-anchor" href="index.php">Search for an Event</a>
                                 </li>
                                 <li data-page="upcomingEvents"><a href="projekt/html/upcomingevent.php">Upcoming Events</a></li>
-                                <li data-page="createEvent"><a href="projekt/html/createevent.php">Create Event</a></li>
-                            
-                            
-            
+                                <?php
+                                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                    echo ' <li data-page="createEvent"><a href="projekt/html/createevent.php">Create Event</a></li>';
+                                }
+                                ?>
+
+
+
                                 <li><a href="projekt/html/login.php">Log In</a></li>
                                 <li><a href="projekt/html/register.php">Register</a></li>
-    
+                                <?php
+                                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                    echo '<li><a href="projekt/html/logout.php">Log out</a></li>';
+                                }
+                                ?>
+
+
+
                             
                             </ul>
                         
@@ -106,44 +144,49 @@
             <section class="main-search-section">
             <h1 class="caption">Welcome!</h1>
             <div class="container">
-                <form action="POST" class="search-bar1">
-                    <input type="text" placeholder="Search event" name="searched">
-                    <button type="submit"><img src="projekt/images/search.png" alt="search icon"></button>
-                </form>
+                <form method="post" >
+                    <div class="search-bar1">
+                        <input type="text" placeholder="Search event" name="searched">
+                        <button type="submit" name="search"><img src="projekt/images/search.png" alt="search icon"></button>
+                    </div>
+
                 <div class="break"></div>
                 <div class="filters">
-                    <select class="filter">
-                        <option value="0">Today</option>
-                        <option value="1">Tomorrow</option>
-                        <option value="2">This weekend</option>
-                        <option value="3">This week</option>
-                        <option value="4">This month</option>
-                        <option value="5">Anytime</option>
+                    <select class="filter" name="time">
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="weekend">This weekend</option>
+                        <option value="week">This week</option>
+                        <option value="month">This month</option>
+                        <option value="anytime" selected>Anytime</option>
                       </select>
-                    <select class="filter">
-                        <option value="6">Szeged</option>
-                        <option value="7">Debrecen</option>
-                        <option value="8">Budapest</option>
-                        <option value="9">Pécs</option>
-                        <option value="10">Other city</option>
+                    <select class="filter" name="location">
+                        <option value="szeged">Szeged</option>
+                        <option value="debrecen">Debrecen</option>
+                        <option value="budapest">Budapest</option>
+                        <option value="pécs">Pécs</option>
+                        <option value="any" selected>Any</option>
                       </select>
-                    <select class="filter">
-                        <option value="11">Sport events</option>
-                        <option value="12">Festivals</option>
-                        <option value="13">Concerts</option>
-                        <option value="14">Club nights</option>
-                        <option value="15">Theatre & Comedy</option>
+                    <select class="filter" name="type">
+                        <option value="sport">Sport events</option>
+                        <option value="festival">Festivals</option>
+                        <option value="concert">Concerts</option>
+                        <option value="club">Club nights</option>
+                        <option value="theatre">Theatre & Comedy</option>
+                        <option value="any" selected>Any</option>
                       </select>
-                    <select class="filter">
-                        <option value="16">Techno</option>
-                        <option value="17">Blues</option>
-                        <option value="18">Disco</option>
-                        <option value="19">Classical</option>
-                        <option value="20">Country</option>
-                        <option value="21">Rock</option>
-                        <option value="22">Drum and bass</option>
+                    <select class="filter" name="music">
+                        <option value="techno">Techno</option>
+                        <option value="blues">Blues</option>
+                        <option value="disco">Disco</option>
+                        <option value="classical">Classical</option>
+                        <option value="country">Country</option>
+                        <option value="rock">Rock</option>
+                        <option value="bass">Drum and bass</option>
+                        <option value="any" selected>Any</option>
                       </select>
                 </div>
+                </form>
                 <div class="break"></div>
             </div>
             </section>
