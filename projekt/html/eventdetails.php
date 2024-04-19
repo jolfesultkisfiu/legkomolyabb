@@ -97,8 +97,57 @@
             </nav>
             </header>
         <main>
-            
-            <div class="event-details-container">
+        <?php
+          
+             // upcoming_events.php
+             require_once "../php/eventclass.php";
+            // Check if event ID is provided in the URL
+            if (isset($_GET['id'])) {
+                $eventId = $_GET['id'];
+
+
+                // Retrieve event details based on event ID (e.g., from database or storage)
+               
+                $jsondata = file_get_contents("../json/events.json");
+        
+                $decoded = json_decode($jsondata,true);
+                $numberedArrayForAttributes = [];
+
+                $event = null;
+            //   print_r($decoded["events"][$eventId]); // Assuming a function to retrieve event details by ID
+                $i = 0;
+                foreach($decoded["events"][$eventId] as $key1 => $value1) {
+                    // echo $key . "->>". $value . "<br>";
+                    $numberedArrayForAttributes[$i] = $value1;
+                    $i++;
+                }
+                $title = $numberedArrayForAttributes[0];
+                $details = $numberedArrayForAttributes[1];
+                $date = $numberedArrayForAttributes[2];
+                $startingTime = $numberedArrayForAttributes[3];
+                $thumbnail = $numberedArrayForAttributes[4];
+                $location = $numberedArrayForAttributes[5];
+                $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
+
+            // Create Event object using extracted data
+                $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+                
+                    // Display event details
+              //  print_r($event);
+
+                if ($event) {
+                    
+                  echo $event->generateEventDetailsHTML();
+                    // Display other event details as needed
+                } else {
+                    echo '<p>Event not found.</p>';
+                }
+            } else {
+                echo '<p>Invalid request.</p>';
+            }
+        ?>
+
+            <!-- <div class="event-details-container">
                 <img src="../images/hiking.jpg" alt="Event thumbnail">
                 <h2>Hiking Tour with friends at the local mountain</h2>
                 <div class="event-info">
@@ -114,7 +163,7 @@
                 <form action="../php/signupforevent.php" id="eventSignupForm">
                     <input type="submit" value="Sign up for this event">
                 </form>
-            </div>
+            </div> -->
 
             <script src="../js/paneldisplay.js"></script>
         </main>

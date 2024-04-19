@@ -23,40 +23,54 @@
 
         }
 
+
+        // Method to generate HTML for event details
+    public function generateEventDetailsHTML()
+    {
+        // Format starting time (e.g., convert "12:30" to hour and minute integers)
+        $startingTime = $this->getStartingTime();
+       // list($hour, $minute) = explode(':', $startingTime);
+       $eventId = $this->getEventId();
+
+        // Prepare HTML string with event attributes
+        $html = '
+            <div class="event-details-container">
+                <img src="%s" alt="Event thumbnail">
+                <h2>%s</h2>
+                <div class="event-info">
+                    <p class="detailed-info-paragraph">%s</p>
+                    <p class="starting-time-paragraph">Starting time: %s</p>
+                    <p class="starting-date-paragraph">Event Date (mm/dd/yyyy): %s</p>
+                    <p class="event-location-paragraph">Location: %s</p>
+                </div>
+                <form action="../php/signupforevent.php" id="eventSignupForm">
+                    <input type="hidden" name="eventId" value="%s">
+                    <input type="submit" value="Sign up for this event">
+                </form>
+            </div>
+        ';
+
+        // Replace placeholders in HTML string with event attributes
+        $formattedHtml = sprintf(
+            $html,
+            $this->getThumbnail(),
+            $this->getTitle(),
+            $this->getDetails(),
+            $startingTime,
+            date('m/d/Y', strtotime($this->getDate())),
+            $this->getLocation(),
+            $eventId // Assuming you have a method getId() to retrieve event ID
+        );
+
+        return $formattedHtml;
+    }
+
       
           // Generate HTML article for the event
     public function generateEventArticle()
     {
-        $jsondata = file_get_contents("../json/events.json");
-        
-        $decoded = json_decode($jsondata,true);
-
-        $eventId = 0;
-
-        foreach($decoded["events"] as $key => $value){
-            $i = 0;
-           // echo $key . "<br>";
-            foreach($value as $key1 => $value1) {
-                // echo $key . "->>". $value . "<br>";
-                 $numberedArrayForAttributes[$i] = $value1;
-                 $i++;
-             }
-            $title = $numberedArrayForAttributes[0];
-            $details = $numberedArrayForAttributes[1];
-            $date = $numberedArrayForAttributes[2];
-            $startingTime = $numberedArrayForAttributes[3];
-            $thumbnail = $numberedArrayForAttributes[4];
-            $location = $numberedArrayForAttributes[5];
-            $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
-
-           // Create Event object using extracted data
-            $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
-            if ($event == $this) {
-                $eventId = $key;
-                break;
-            }
-        }
-
+        $eventId = $this->getEventId();
+       
         $html = '
             <article class="event-showcase-article-new">
                 <img src="%s" class="event-thumbnail-display-new" alt="event thumbnail">
@@ -103,6 +117,39 @@
             return $this->title;
         }
 
+        public function getEventId() {
+            $jsondata = file_get_contents("../json/events.json");
+        
+            $decoded = json_decode($jsondata,true);
+    
+            $eventId = 0;
+    
+            foreach($decoded["events"] as $key => $value){
+                $i = 0;
+               // echo $key . "<br>";
+                foreach($value as $key1 => $value1) {
+                    // echo $key . "->>". $value . "<br>";
+                     $numberedArrayForAttributes[$i] = $value1;
+                     $i++;
+                 }
+                $title = $numberedArrayForAttributes[0];
+                $details = $numberedArrayForAttributes[1];
+                $date = $numberedArrayForAttributes[2];
+                $startingTime = $numberedArrayForAttributes[3];
+                $thumbnail = $numberedArrayForAttributes[4];
+                $location = $numberedArrayForAttributes[5];
+                $numberOfPeopleSignedUp = $numberedArrayForAttributes[6];
+    
+               // Create Event object using extracted data
+                $event = new Event($title, $details, $date, $startingTime, $thumbnail, $location, $numberOfPeopleSignedUp);
+                if ($event == $this) {
+                    $eventId = $key;
+                    break;
+                }
+            }
+            return $eventId;
+    
+        }
         public function getDetails() {
             return $this->details;
         }
