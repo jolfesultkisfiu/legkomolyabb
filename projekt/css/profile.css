@@ -340,4 +340,7 @@ button {
        padding-bottom: 1rem;
        margin-top: 2rem;
     }
+    .view-events-span{
+        margin-top: 4rem;
+    }
 }
