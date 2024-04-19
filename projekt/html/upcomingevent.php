@@ -66,6 +66,11 @@ session_start();
                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
                     echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
                 }
+
+                if (isset($_SESSION["started"]) && $_SESSION["started"] === true) {
+                    echo '<li id="registerLi"><a href="profile.html">Profile</a></li>';
+                }
+
                 ?>
                 <?php
                 if(!isset($_SESSION["started"])){
@@ -118,6 +123,11 @@ session_start();
 
                             if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
                                 echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
+                            }
+                            ?>
+                            <?php
+                            if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                echo '<li id="registerLi"><a href="profile.html">Profile</a></li>';
                             }
                             ?>
                             <?php
