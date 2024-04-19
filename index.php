@@ -1,15 +1,21 @@
 <?php
 session_start();
+include ("projekt/php/Templates/Filter.php");
+$arr=Filter::filter("anytime","any","any","any","");
 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
     echo $_SESSION["started"];
 }
 
 if(isset($_POST["search"])){
+
     $time=$_POST["time"];
     $location=$_POST["location"];
     $type=$_POST["type"];
     $music=$_POST["music"];
-    echo $time;
+    $search=$_POST["searched"];
+    $arr=Filter::filter($time,$location,$type,$music,$search);
+    print_r($arr);
+
 }
 ?>
 
@@ -82,6 +88,11 @@ if(isset($_POST["search"])){
                     }
                     ?>
                     <?php
+                    if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                        echo '<li id="registerLi"><a href="projekt/html/profile.html">Profile</a></li>';
+                    }
+                    ?>
+                    <?php
                     if(!isset($_SESSION["started"])){
                         echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
                     }
@@ -134,6 +145,11 @@ if(isset($_POST["search"])){
                                 }
                                 ?>
                                 <?php
+                                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                    echo '<li id="loginLi"><a href="projekt/html/profile.html">Profile</a></li>';
+                                }
+                                ?>
+                                <?php
                                 if(!isset($_SESSION["started"])){
                                     echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
                                 }
@@ -172,7 +188,6 @@ if(isset($_POST["search"])){
                     <select class="filter" name="time">
                         <option value="today">Today</option>
                         <option value="tomorrow">Tomorrow</option>
-                        <option value="weekend">This weekend</option>
                         <option value="week">This week</option>
                         <option value="month">This month</option>
                         <option value="anytime" selected>Anytime</option>
@@ -188,18 +203,14 @@ if(isset($_POST["search"])){
                         <option value="sport">Sport events</option>
                         <option value="festival">Festivals</option>
                         <option value="concert">Concerts</option>
-                        <option value="club">Club nights</option>
                         <option value="theatre">Theatre & Comedy</option>
                         <option value="any" selected>Any</option>
                       </select>
                     <select class="filter" name="music">
                         <option value="techno">Techno</option>
-                        <option value="blues">Blues</option>
                         <option value="disco">Disco</option>
                         <option value="classical">Classical</option>
-                        <option value="country">Country</option>
                         <option value="rock">Rock</option>
-                        <option value="bass">Drum and bass</option>
                         <option value="any" selected>Any</option>
                       </select>
                 </div>
@@ -212,70 +223,58 @@ if(isset($_POST["search"])){
 
             
             <section class="upcoming-events-new-section">
-                <h2 class="upcoming-events-header">Listed Events</h2>
-                <div class="event-article-container">
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/streetsoccer.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
+                <?php
+                if(empty($arr["events"])){
+                    echo '<h2 class="upcoming-events-header">There are no events that match your filters.</h2>';
+                }else{
+                    echo '<h2 class="upcoming-events-header">Listed Events</h2>';
+
+                    echo '<div class="event-article-container">';
+
+                    foreach ($arr["events"] as $data){
+                        $src="";
+                        $title="";
+                        $details="";
+                        $i=0;
+                        foreach ($data as $d){
+
+                            if($i===0){
+                                $title=$d;
+                            }
+                            if($i===1){
+                                $details=$d;
+                            }
+                            if($i===4){
+                                $src=$d;
+                            }
+                            $i++;
+                        }
+                        $title=str_replace("'"," ",$title);
+                        $details=str_replace("'"," ",$details);
+                        $src=explode("/",$src);
+                        $src[0]="projekt";
+                        $src[1]="/images/";
+                        $src = implode("", $src);
+
+                        echo '<article class="event-showcase-article-new">
+                        <img src="'.$src.'" class="event-thumbnail-display-new" alt="event thumnbail">
                         <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">Street Soccer Match</h2>
-                            <p class="event-short-description-new">Dive into the excitement of a friendly soccer tournament! Join us for an action-packed day of thrilling matches, delicious food, and vibrant community spirit. Don't miss out on the fun!</p>
+                            <h2 class="event-title-new">'.$title.'</h2>
+                            <p class="event-short-description-new">'.$details.'</p>
                             <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
                         </div>
                         <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/gig.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">22nd Youth Music Festival</h2>
-                            <p class="event-short-description-new">Get ready to groove at our electrifying music festival! Experience a day filled with live performances from talented artists, delicious food trucks, and unforgettable moments with friends. Let the music carry you away!</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/conference.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">Investment Seminar</h2>
-                            <p class="event-short-description-new">Unlock the secrets to financial success at our investment seminar! Join industry experts for insightful talks, practical tips, and valuable strategies to grow your wealth and secure your future. Don't miss this opportunity to take control of your financial destiny!</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/artexhibition.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">Local Art Exhibition</h2>
-                            <p class="event-short-description-new">Step into a world of creativity and wonder at our art exhibition! Discover captivating works by talented artists, from vibrant paintings to intricate sculptures. Immerse yourself in the beauty of expression and be inspired by the power of art.</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/party.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">18th Birthday Party</h2>
-                            <p class="event-short-description-new">Prepare for the ultimate celebration! Join us for a night of non-stop fun, music, and dancing at our extravagant party. With delicious drinks, exciting entertainment, and a vibrant atmosphere, it's the event of the year you won't want to miss!</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                    <article class="event-showcase-article-new">
-                        <img src="projekt/images/hiking.jpg" class="event-thumbnail-display-new" alt="event thumnbail">
-                        <div class="event-sneak-peek-new">
-                            <h2 class="event-title-new">Hiking Trip</h2>
-                            <p class="event-short-description-new">Embark on an unforgettable adventure with our hiking trip! Explore breathtaking trails, majestic landscapes, and connect with nature. Whether you're a seasoned trekker or a novice explorer, join us for an exhilarating journey filled with breathtaking views and unforgettable experiences.</p>
-                            <p class="instructions-to-view-details-new">Click on the double arrow to see more details</p>
-                        
-                        </div>
-                        <a href="projekt/html/eventdetails.php" class="event-details-link-new" title="Event Details"></a>
-                    </article>
-                   
-                </div>
+                    </article>';
+                    }
+                }
+
+
+
+                    echo '</div>';
+
+
+                ?>
+
                 
                
                
