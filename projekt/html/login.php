@@ -16,6 +16,7 @@ if(isset($_POST["login"])){
     }
     if(count($errors)===0){
         session_start();
+        $_SESSION["username"] = $username;
         $_SESSION["started"]=true;
         header("Location: ../../index.php");
         die();

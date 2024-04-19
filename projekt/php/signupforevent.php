@@ -1,6 +1,6 @@
 <?php 
 
-    
+    session_start();
     require_once "../php/eventclass.php";
 
 
@@ -17,9 +17,11 @@
          foreach($usersdecoded as $key) {
             
             foreach($key as $key2 => $value2) {
-              echo $value2;
+             // echo $value2;
             }
          }
+
+         echo $_SESSION["username"];
 
 
 
