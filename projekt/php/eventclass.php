@@ -75,7 +75,7 @@
             <article class="event-showcase-article-new">
                 <img src="%s" class="event-thumbnail-display-new" alt="event thumbnail">
                 <div class="event-sneak-peek-new">
-                    <h2 class="event-title-new">%s</h2>
+                    <h2 class="event-title-new" title="Event Title">%s</h2>
                     <p class="event-short-description-new">%s</p>
                     <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br><br> <em>Number of people attending: %s</em> <br><br>
                     Click on the double arrow to see more details!</p>
