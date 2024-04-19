@@ -17,14 +17,20 @@
          $usersjsondata = file_get_contents("../json/users.json");
          $usersdecoded = json_decode($usersjsondata,true);
 
+         $foundUser = false;
         foreach($usersdecoded as &$key) {
           //  var_dump($key);
-
+            //var_dump($key["signedUpEvents"]);
             foreach($key as &$key2) {
-              var_dump($key2);
+           //   var_dump($key2);
               if($key2 === $currentUser) {
-                echo "BINGO";
+            //   echo "BINGO";
+                $foundUser = true;
               }
+            }
+            if($foundUser) {
+               
+              $key["signedUpEvents"][] =  $eventId;
             }
 
 
@@ -37,7 +43,7 @@
               // $numberedArrayForAttributes[$i] = $value1;
               // 6 is index of the "Number of people signed up" attribute.
               if($i == 6){
-                echo "Signed up people : " . $key1 . "<br>";
+              //  echo "Signed up people : " . $key1 . "<br>";
                 $key1++;
               }
              
@@ -46,6 +52,11 @@
     
           $jsondata = json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
            file_put_contents("../json/events.json",$jsondata);
+
+           $jsondata = json_encode($usersdecoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+           file_put_contents("../json/users.json",$jsondata);
+
+           header("Location: ../html/usersignedevents.php");
           
     }
 

@@ -1,33 +1,13 @@
 [
     {
-        "id": 1,
-        "password": "$2y$10$tW2GWFtf1Q9QM\/YF1Q1OUORVQA8ojjaHnqt3s.vca5C26qJ1073\/.",
-        "username": "jolfesultkisfiu"
-    },
-    {
-        "id": 2,
-        "password": "$2y$10$pzypYZB5gM5jP81JP7RzKurIIC7ZM6V5wzZ1TdNeSEPi8Ck9ymc2C",
-        "username": "h270187@stud.u-szeged.hu"
-    },
-    {
-        "id": 3,
-        "password": "$2y$10$CEuG1nTBBYbbyspQIm9skeAmboqf06cM5cmcOybk95EW3UxoukUCK",
-        "username": "tg"
-    },
-    {
-        "id": 4,
-        "password": "$2y$10$.sGa0J2Gd6QqHwF3vVuxOOL82iFf\/G6fWm7Jo1uKs1jZq6J.UmngG",
-        "username": "_toth_patricia"
-    },
-    {
-        "id": 5,
-        "password": "$2y$10$rfVf0xc5ITw5Pk3Z3NpLZet187Ez8eIDtEU8qPBddZCvoWIhxrc3W",
-        "username": "test"
-    },
-    {
         "id": 6,
         "password": "$2y$10$OFN4WFUMNZv3kUaa1VY.X.r6XggxEz6rtM4bcRa4ONmXLSrKanwIW",
         "username": "robi",
-        "signedUpEvents": null
+        "signedUpEvents": [
+            "2",
+            "7",
+            "7",
+            "7"
+        ]
     }
 ]
