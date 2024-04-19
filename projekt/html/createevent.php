@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,10 +52,24 @@
                             </div>
                         </div>
                     </li>
-                 
-                    
-                    <li id="loginLi"><a href="login.php">Log In</a></li>
-                    <li id="registerLi"><a href="register.php">Register</a></li>
+
+
+                    <?php
+
+                    if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                        echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
+                    }
+                    ?>
+                    <?php
+                    if(!isset($_SESSION["started"])){
+                        echo '<li id="loginLi"><a href="login.php">Log In</a></li>';
+                    }
+                    ?>
+                    <?php
+                    if(!isset($_SESSION["started"])){
+                        echo '<li id="registerLi"><a href="register.php">Register</a></li>';
+                    }
+                    ?>
     
                     <li class="dropdown-li">
                         <div class="dropdown-menu" id="dropdownHamburger">
@@ -79,11 +97,25 @@
                                 </li>
                                 <li data-page="upcomingEvents"><a href="upcomingevent.php">Upcoming Events</a></li>
                                 <li data-page="createEvent"><a href="createevent.php">Create Event</a></li>
-                            
-                            
-            
-                                <li><a href="login.php">Log In</a></li>
-                                <li><a href="register.php">Register</a></li>
+
+
+
+                                <?php
+
+                                if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
+                                    echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
+                                }
+                                ?>
+                                <?php
+                                if(!isset($_SESSION["started"])){
+                                    echo '<li id="loginLi"><a href="login.php">Log In</a></li>';
+                                }
+                                ?>
+                                <?php
+                                if(!isset($_SESSION["started"])){
+                                    echo '<li id="registerLi"><a href="register.php">Register</a></li>';
+                                }
+                                ?>
     
                             
                             </ul>
