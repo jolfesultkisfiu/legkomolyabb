@@ -113,7 +113,7 @@
 
        // print_r($event);
 
-        echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
+       // echo "<img src = " . "\"$fp2\"" . "alt = 'event cover photo'" . ">";
 
         $jsondata = file_get_contents("../json/events.json");
         $decoded = json_decode($jsondata,true);

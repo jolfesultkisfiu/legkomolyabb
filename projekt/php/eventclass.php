@@ -77,7 +77,7 @@
                 <div class="event-sneak-peek-new">
                     <h2 class="event-title-new">%s</h2>
                     <p class="event-short-description-new">%s</p>
-                    <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br><br>
+                    <p class="instructions-to-view-details-new">Date: %s, Time: %s. <br><br> <em>Number of people attending: %s</em> <br><br>
                     Click on the double arrow to see more details!</p>
                 </div>
                 <a href="eventdetails.php?id=%s" class="event-details-link-new" title="Event Details"></a>
@@ -92,6 +92,7 @@
                 $small = substr($this->getDetails(), 0, 160) . "...",
                 $this->getDate(),
                 $this->getStartingTime(),
+                $this->getNumberOfPeopleSignedUp(),
                 $eventId
                 //$this->getLocation()
             );
@@ -103,6 +104,7 @@
             $small = substr($this->getDetails(), 0, 160) ,
             $this->getDate(),
             $this->getStartingTime(),
+            $this->getNumberOfPeopleSignedUp(),
             $eventId
             //$this->getLocation()
         );
