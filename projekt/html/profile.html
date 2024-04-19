@@ -31,6 +31,7 @@
 <body>
     <section class="main-profile-hero">
         <h1 class="main-header">Your Profile</h1>
+   
         <div class="wrapper">
             <div class="data-container">
                 <div class="profile-pic-wrapper">
@@ -92,7 +93,19 @@
                     <button type="button" class="delete-button" onclick="confirmDelete()">Delete My Account</button>
                 </form>
             </div>
+            <div class="horizontal-div"></div>
+            <span class="view-events-span">
+                <a href="../php/view-events.php?id=" class="view-events-anchor">View My Events</a><br>
+            </span>
+            <span class="home-span">
+                <a href="../../index.php" class="home-anchor">Go back to <b>Home</b></a>
            
+            </span>
+            <span class="home-span">
+                <a href="../php/newsletter" class="home-anchor">You are currently <b>Subscribed</b> to our newsletter</a>
+           
+            </span>
+            
             
             <script>
                 function confirmDelete() {
