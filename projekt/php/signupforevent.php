@@ -7,6 +7,9 @@
     if (isset($_GET["eventId"])) {
          $eventId = $_GET["eventId"];
          //get the corresponding event
+
+         $currentUser = $_SESSION["username"];
+
          $jsondata = file_get_contents("../json/events.json");
          $decoded = json_decode($jsondata,true);
 
@@ -14,16 +17,18 @@
          $usersjsondata = file_get_contents("../json/users.json");
          $usersdecoded = json_decode($usersjsondata,true);
 
-         foreach($usersdecoded as $key) {
-            
-            foreach($key as $key2 => $value2) {
-             // echo $value2;
+        foreach($usersdecoded as &$key) {
+          //  var_dump($key);
+
+            foreach($key as &$key2) {
+              var_dump($key2);
+              if($key2 === $currentUser) {
+                echo "BINGO";
+              }
             }
-         }
-
-         echo $_SESSION["username"];
 
 
+        }
 
          $i = 0;
          // echo $key . "<br>";
@@ -35,7 +40,7 @@
                 echo "Signed up people : " . $key1 . "<br>";
                 $key1++;
               }
-              echo "Signed up people : " . $key1 . "<br>";
+             
                $i++;
            }
     

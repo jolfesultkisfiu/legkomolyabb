@@ -93,7 +93,7 @@ class User{
         }
 
         $newUser=new User($id+1,$psw,$name);
-        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name);
+        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents);
         $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
 

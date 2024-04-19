@@ -23,5 +23,11 @@
         "id": 5,
         "password": "$2y$10$rfVf0xc5ITw5Pk3Z3NpLZet187Ez8eIDtEU8qPBddZCvoWIhxrc3W",
         "username": "test"
+    },
+    {
+        "id": 6,
+        "password": "$2y$10$OFN4WFUMNZv3kUaa1VY.X.r6XggxEz6rtM4bcRa4ONmXLSrKanwIW",
+        "username": "robi",
+        "signedUpEvents": null
     }
 ]
