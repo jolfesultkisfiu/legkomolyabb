@@ -41,7 +41,8 @@
                     <p class="detailed-info-paragraph">%s</p>
                     <p class="starting-time-paragraph">Starting time: %s</p>
                     <p class="starting-date-paragraph">Event Date (mm/dd/yyyy): %s</p>
-                    <p class="event-location-paragraph">Location: %s</p>
+                    <p class="event-location-paragraph">Location: %s</p> <br><br>
+                    <p class="event-location-paragraph">Number of people attending: %s</p>
                 </div>
                 <form action="../php/signupforevent.php" id="eventSignupForm">
                     <input type="hidden" name="eventId" value="%s">
@@ -59,6 +60,7 @@
             $startingTime,
             date('m/d/Y', strtotime($this->getDate())),
             $this->getLocation(),
+            $this->getNumberOfPeopleSignedUp(),
             $eventId // Assuming you have a method getId() to retrieve event ID
         );
 
@@ -84,7 +86,8 @@
                           <p class="detailed-info-paragraph">%s</p>
                           <p class="starting-time-paragraph">Starting time: %s</p>
                           <p class="starting-date-paragraph">Event Date (mm/dd/yyyy): %s</p>
-                          <p class="event-location-paragraph">Location: %s</p>
+                          <p class="event-location-paragraph">Location: %s</p> <br><br>
+                          <p class="event-location-paragraph">Number of people attending: %s</p>
                       </div>
                       <form action="../php/unsubfromevent.php" id="eventSignupForm">
                           <input type="hidden" name="eventId" value="%s">
@@ -102,6 +105,7 @@
                   $startingTime,
                   date('m/d/Y', strtotime($this->getDate())),
                   $this->getLocation(),
+                  $this->getNumberOfPeopleSignedUp(),
                   $eventId // Assuming you have a method getId() to retrieve event ID
               );
       

@@ -179,6 +179,7 @@ session_start();
                    if($foundUser) {
                       
                      $currentSignedUps = $key["signedUpEvents"];
+                     break;
                    }
        
        

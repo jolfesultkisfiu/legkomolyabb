@@ -1,47 +1,23 @@
 [
     {
-        "id": 6,
-        "password": "$2y$10$OFN4WFUMNZv3kUaa1VY.X.r6XggxEz6rtM4bcRa4ONmXLSrKanwIW",
+        "id": 1,
+        "password": "$2y$10$WcuNcBuu\/lLmaZGbI1MyCu6KGDI0NpZ6Ika.eEzyQ1RZu0SPaWDcS",
         "username": "robi",
-        "signedUpEvents": [
-            "2",
-            "3"
-        ],
-        "subscribed": false,
-        "image": "..\/images\/robi.png",
-        "email": "albert@gem.com"
-    },
-    {
-        "id": 7,
-        "password": "$2y$10$F3ojDUJS\/6c9QgoaHAwL4Oj1u\/gvIumZftVqIndDvirxCHpGoye3K",
-        "username": "jolfesultkisfiu",
-        "signedUpEvents": [
-            "2"
-        ],
-        "subscribed": false,
-        "image": "..\/images\/robi.jpg",
-        "email": "@"
-    },
-    {
-        "id": 8,
-        "password": "$2y$10$Rh2lgdwyLOppydgiBKKRZe8XIoXEn2FAz4.5e\/JbzxhyNgMraSEHu",
-        "username": "TG",
-        "signedUpEvents": [
-            "2"
-        ],
+        "signedUpEvents": [],
         "subscribed": true,
-        "image": "..\/images\/robi.jpg",
-        "email": "@"
+        "image": "..\/images\/robi877487.jpg",
+        "email": "gniger@gmail.com"
     },
     {
-        "id": 9,
-        "password": "$2y$10$ekip1oV6AGLw7CDQ27XBKOqORiF3\/24\/kcYUY8sxdl\/1J7SS.pGFy",
-        "username": "test2",
+        "id": 2,
+        "password": "$2y$10$9FyYvyeAC3Fqh72gIyDW\/.zjMx62kRtb0AHQohHCn3iTWFF\/a1Xgq",
+        "username": "test",
         "signedUpEvents": [
-            "2"
+            "5",
+            "7"
         ],
         "subscribed": false,
-        "image": "..\/images\/robi.jpg",
-        "email": "jolfesultkisfiu2@yahoo.com"
+        "image": "..\/images\/test.png",
+        "email": "@"
     }
 ]

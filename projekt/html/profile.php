@@ -20,7 +20,7 @@ if(isset($_POST["unsub"])){
 }
 
 
-echo $username;
+//echo $username;
 ?>
 
 <!DOCTYPE html>

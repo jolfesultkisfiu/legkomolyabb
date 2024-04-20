@@ -81,7 +81,7 @@ class User{
         $this->ownid=$id;
         $this->jelszo = $jelszo;
         $this->username = $username;
-        $this->imageSrc="profile.jpg";
+        $this->imageSrc="../images/profile.jpg";
         $signedUpEvents = array();
         $this->isSubscribed = false;
         $this->email="@";

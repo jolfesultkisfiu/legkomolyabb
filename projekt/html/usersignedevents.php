@@ -223,6 +223,7 @@ session_start();
                    if($foundUser) {
                       
                     $signedUpEventsList = $key["signedUpEvents"];
+                    break;
                    }
        
        
