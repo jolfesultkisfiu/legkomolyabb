@@ -216,7 +216,7 @@ session_start();
 
                 if ($event) {
 
-                    if(in_array($eventId,$currentSignedUps)) {
+                    if($currentSignedUps !== null && in_array($eventId,$currentSignedUps)) {
                         echo $event->generateEventDetailsHTMLSignedUp();
                     }
                     else {
