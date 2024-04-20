@@ -3,36 +3,44 @@
         "id": 6,
         "password": "$2y$10$OFN4WFUMNZv3kUaa1VY.X.r6XggxEz6rtM4bcRa4ONmXLSrKanwIW",
         "username": "robi",
-        "signedUpEvents": [],
+        "signedUpEvents": {
+            "image": "..\/images\/robi210701.jpg"
+        },
         "subscribed": false,
-        "image": "profile.jpg",
+        "image": "..\/images\/robi482938.jpg",
         "email": "albert@gem.com"
     },
     {
         "id": 7,
         "password": "$2y$10$F3ojDUJS\/6c9QgoaHAwL4Oj1u\/gvIumZftVqIndDvirxCHpGoye3K",
         "username": "jolfesultkisfiu",
-        "signedUpEvents": [],
+        "signedUpEvents": {
+            "image": "..\/images\/robi210701.jpg"
+        },
         "subscribed": false,
-        "image": "profile.jpg",
+        "image": "..\/images\/robi.jpg",
         "email": "@"
     },
     {
         "id": 8,
         "password": "$2y$10$Rh2lgdwyLOppydgiBKKRZe8XIoXEn2FAz4.5e\/JbzxhyNgMraSEHu",
         "username": "TG",
-        "signedUpEvents": [],
+        "signedUpEvents": {
+            "image": "..\/images\/robi210701.jpg"
+        },
         "subscribed": true,
-        "image": "profile.jpg",
+        "image": "..\/images\/robi.jpg",
         "email": "@"
     },
     {
         "id": 9,
         "password": "$2y$10$ekip1oV6AGLw7CDQ27XBKOqORiF3\/24\/kcYUY8sxdl\/1J7SS.pGFy",
         "username": "test2",
-        "signedUpEvents": [],
+        "signedUpEvents": {
+            "image": "..\/images\/robi210701.jpg"
+        },
         "subscribed": false,
-        "image": "profile.jpg",
+        "image": "..\/images\/robi.jpg",
         "email": "jolfesultkisfiu2@yahoo.com"
     }
 ]
