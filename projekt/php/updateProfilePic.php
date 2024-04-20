@@ -19,6 +19,12 @@ if(isset($_FILES["profilePicture"])){
                    // a cél útvonal összeállítása
                    $originalPath = $_FILES["profilePicture"]["name"];
                    $targetPath = "../images/" . $currentUser . "." . $extension;
+
+                      // PHP < 8
+                      if ($targetPath == trim($targetPath) && strpos($targetPath, ' ') !== false) {
+                        $targetPath = "../images/" . $currentUser. rand(1,99999999) . "." . $extension;
+                    }
+
                      // ha már létezik ilyen nevű fájl a cél útvonalon, figyelmeztetést írunk ki
                   if (file_exists($targetPath)) {
                      

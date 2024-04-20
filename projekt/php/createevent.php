@@ -59,6 +59,10 @@
                 if($_FILES["eventThumbnail"]["size"] < 10000000){ //approx. 10 MB.
                      // a cél útvonal összeállítása
                      $targetPath = "../images/" . $_FILES["eventThumbnail"]["name"];
+                     // PHP < 8
+                    if ($targetPath == trim($targetPath) && strpos($targetPath, ' ') !== false) {
+                        $targetPath = "../images/" . rand(1,99999999) . "." . $extension;
+                    }
 
                        // ha már létezik ilyen nevű fájl a cél útvonalon, figyelmeztetést írunk ki
                     if (file_exists($targetPath)) {
