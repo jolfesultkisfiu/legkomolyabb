@@ -61,7 +61,39 @@ echo $username;
         <div class="wrapper">
             <div class="data-container">
                 <div class="profile-pic-wrapper">
-                    <img src="../images/RobertNagyImage.jpg" alt="Your profile picture" class="profile-pic-img">
+                   
+                    <img src= <?php
+                       // session_start();
+                        $currentUser = $_SESSION["username"];
+
+                        $usersjsondata = file_get_contents("../json/users.json");
+                        $usersdecoded = json_decode($usersjsondata,true);
+                    
+                         $foundUser = false;
+                        $currentPFPPath = "";
+                       foreach($usersdecoded as &$key) {
+                         //  var_dump($key);
+                           //var_dump($key["signedUpEvents"]);
+                           foreach($key as &$key2) {
+                          //   var_dump($key2);
+                             if($key2 === $currentUser) {
+                           //   echo "BINGO";
+                               // echo "<br><br>" . $key2 . "<br><br>";
+                               // $key["image"] = $fetchPath;
+                                $foundUser = true;
+                             }
+                           }
+                           if($foundUser) {
+                                $currentPFPPath = $key["image"];
+                                echo $currentPFPPath;
+                                //echo `<img src="$currentPFPPath" alt="Your profile picture" class="profile-pic-img">`;
+                                break;
+                             }
+                       
+                    
+                    
+                       }
+                    ?> alt="Your profile picture" class="profile-pic-img">
                     <form action="../php/updateProfilePic.php" method="post"  enctype="multipart/form-data" >
                     
                         <div>

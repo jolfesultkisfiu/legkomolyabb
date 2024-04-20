@@ -47,7 +47,7 @@ if(isset($_FILES["profilePicture"])){
     $usersjsondata = file_get_contents("../json/users.json");
     $usersdecoded = json_decode($usersjsondata,true);
 
-    $foundUser = false;
+   // $foundUser = false;
    // $currentSignedUps = [];
    foreach($usersdecoded as &$key) {
      //  var_dump($key);
@@ -58,18 +58,17 @@ if(isset($_FILES["profilePicture"])){
        //   echo "BINGO";
             echo "<br><br>" . $key2 . "<br><br>";
             $key["image"] = $fetchPath;
-            $foundUser = true;
+           // $foundUser = true;
          }
        }
-    //    if($foundUser) {
-          
-       
-    //    }
+   
 
 
    }
    $jsondata = json_encode($usersdecoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
    file_put_contents("../json/users.json",$jsondata);
+
+   header("Location: ../html/profile.php");
 
 }
 

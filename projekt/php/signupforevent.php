@@ -31,6 +31,7 @@
             if($foundUser) {
                
               $key["signedUpEvents"][] =  $eventId;
+              break;
             }
 
 
