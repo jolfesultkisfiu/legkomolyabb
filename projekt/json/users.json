@@ -4,10 +4,10 @@
         "password": "$2y$10$WcuNcBuu\/lLmaZGbI1MyCu6KGDI0NpZ6Ika.eEzyQ1RZu0SPaWDcS",
         "username": "robi",
         "signedUpEvents": [
-            "7"
+            "5"
         ],
         "subscribed": true,
-        "image": "..\/images\/robi877487.jpg",
+        "image": "..\/images\/robi116832.png",
         "email": "gniger@gmail.com"
     },
     {
@@ -15,8 +15,7 @@
         "password": "$2y$10$9FyYvyeAC3Fqh72gIyDW\/.zjMx62kRtb0AHQohHCn3iTWFF\/a1Xgq",
         "username": "test",
         "signedUpEvents": [
-            "5",
-            "7"
+            "5"
         ],
         "subscribed": false,
         "image": "..\/images\/test.png",
