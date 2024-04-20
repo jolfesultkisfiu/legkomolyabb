@@ -89,7 +89,7 @@ if(isset($_POST["search"])){
                     ?>
                     <?php
                     if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                        echo '<li id="registerLi"><a href="projekt/html/profile.html">Profile</a></li>';
+                        echo '<li id="registerLi"><a href="projekt/html/profile.php">Profile</a></li>';
                     }
                     ?>
                     <?php
@@ -146,7 +146,7 @@ if(isset($_POST["search"])){
                                 ?>
                                 <?php
                                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                    echo '<li id="loginLi"><a href="projekt/html/profile.html">Profile</a></li>';
+                                    echo '<li id="loginLi"><a href="projekt/html/profile.php">Profile</a></li>';
                                 }
                                 ?>
                                 <?php
