@@ -3,6 +3,24 @@
         "id": 6,
         "password": "$2y$10$OFN4WFUMNZv3kUaa1VY.X.r6XggxEz6rtM4bcRa4ONmXLSrKanwIW",
         "username": "robi",
-        "signedUpEvents": []
+        "signedUpEvents": [],
+        "subscribed": false,
+        "image": "profile.jpg"
+    },
+    {
+        "id": 7,
+        "password": "$2y$10$F3ojDUJS\/6c9QgoaHAwL4Oj1u\/gvIumZftVqIndDvirxCHpGoye3K",
+        "username": "jolfesultkisfiu",
+        "signedUpEvents": [],
+        "subscribed": false,
+        "image": "profile.jpg"
+    },
+    {
+        "id": 8,
+        "password": "$2y$10$Rh2lgdwyLOppydgiBKKRZe8XIoXEn2FAz4.5e\/JbzxhyNgMraSEHu",
+        "username": "TG",
+        "signedUpEvents": null,
+        "subscribed": false,
+        "image": "profile.jpg"
     }
 ]

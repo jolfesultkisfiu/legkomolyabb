@@ -6,7 +6,23 @@ class User{
     private $ownid;
     private $signedUpEvents; //array
     private $isSubscribed; //boolean
+    private $imageSrc;
 
+    /**
+     * @return mixed
+     */
+    public function getImageSrc()
+    {
+        return $this->imageSrc;
+    }
+
+    /**
+     * @param mixed $imageSrc
+     */
+    public function setImageSrc($imageSrc): void
+    {
+        $this->imageSrc = $imageSrc;
+    }
 
 
     
@@ -30,8 +46,8 @@ class User{
         $this->ownid=$id;
         $this->jelszo = $jelszo;
         $this->username = $username;
-
-        $this->$signedUpEvents = [];
+        $this->imageSrc="profile.jpg";
+        $$signedUpEvents = array();
         $this->isSubscribed = false;
 
     }
@@ -40,7 +56,7 @@ class User{
      * @return mixed
      */
 
-    
+
 
     public function getOwnid()
     {
@@ -93,7 +109,7 @@ class User{
         }
 
         $newUser=new User($id+1,$psw,$name);
-        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents);
+        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents,"subscribed"=>false,"image"=>$newUser->imageSrc);
         $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
 
@@ -124,14 +140,32 @@ class User{
         $this->signedUpEvents = $signedUpEvents;
     }
 
-    public function getIsSubscribed(){
-        return $this->isSubscribed;
+    public function getIsSubscribed($username){
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                return $data["subscribed"];
+            }
+        } 
+        return null;
     }
 
 
-    public function setIsSubscribed($isSubscribed){
-        $this->isSubscribed = $isSubscribed;
+    public static function setIsSubscribed($username){
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                $arr [$data]["subscribed"]=!$data["subscribed"];
+                $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                return $data["subscribed"];
+            }
+        }
+        return null;
     }
+
 
 
 }
