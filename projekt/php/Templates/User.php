@@ -7,6 +7,41 @@ class User{
     private $signedUpEvents; //array
     private $isSubscribed; //boolean
     private $imageSrc;
+    private $email;
+
+    /**
+     * @return mixed
+     */
+    public static function getEmail($username)
+    {
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                return $data["email"];
+            }
+        }
+        return null;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public static function setEmail($email,$username)
+    {
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                $key=array_search($data,$arr);
+                $arr [$key]["email"]=$email;
+                $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                return $data["email"];
+            }
+        }
+        return null;
+    }
 
     /**
      * @return mixed
@@ -47,8 +82,9 @@ class User{
         $this->jelszo = $jelszo;
         $this->username = $username;
         $this->imageSrc="profile.jpg";
-        $$signedUpEvents = array();
+        $signedUpEvents = array();
         $this->isSubscribed = false;
+        $this->email="@";
 
     }
 
@@ -109,7 +145,7 @@ class User{
         }
 
         $newUser=new User($id+1,$psw,$name);
-        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents,"subscribed"=>false,"image"=>$newUser->imageSrc);
+        $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents,"subscribed"=>false,"image"=>$newUser->imageSrc,"email"=>$newUser->email);
         $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
 
@@ -140,14 +176,14 @@ class User{
         $this->signedUpEvents = $signedUpEvents;
     }
 
-    public function getIsSubscribed($username){
+    public static function getIsSubscribed($username){
         $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
                 return $data["subscribed"];
             }
-        } 
+        }
         return null;
     }
 
@@ -157,7 +193,8 @@ class User{
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
-                $arr [$data]["subscribed"]=!$data["subscribed"];
+                $key=array_search($data,$arr);
+                $arr [$key]["subscribed"]=!$data["subscribed"];
                 $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                 file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
                 return $data["subscribed"];

@@ -5,7 +5,8 @@
         "username": "robi",
         "signedUpEvents": [],
         "subscribed": false,
-        "image": "profile.jpg"
+        "image": "profile.jpg",
+        "email": "@"
     },
     {
         "id": 7,
@@ -13,14 +14,25 @@
         "username": "jolfesultkisfiu",
         "signedUpEvents": [],
         "subscribed": false,
-        "image": "profile.jpg"
+        "image": "profile.jpg",
+        "email": "@"
     },
     {
         "id": 8,
         "password": "$2y$10$Rh2lgdwyLOppydgiBKKRZe8XIoXEn2FAz4.5e\/JbzxhyNgMraSEHu",
         "username": "TG",
         "signedUpEvents": null,
+        "subscribed": true,
+        "image": "profile.jpg",
+        "email": "@"
+    },
+    {
+        "id": 9,
+        "password": "$2y$10$ekip1oV6AGLw7CDQ27XBKOqORiF3\/24\/kcYUY8sxdl\/1J7SS.pGFy",
+        "username": "test2",
+        "signedUpEvents": null,
         "subscribed": false,
-        "image": "profile.jpg"
+        "image": "profile.jpg",
+        "email": "jolfesultkisfiu2@yahoo.com"
     }
 ]

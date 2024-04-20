@@ -67,7 +67,7 @@ session_start();
                 ?>
                 <?php
                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                    echo '<li id="registerLi"><a href="profile.html">Profile</a></li>';
+                    echo '<li id="registerLi"><a href="profile.php">Profile</a></li>';
                 }
                 ?>
                 <?php
@@ -125,7 +125,7 @@ session_start();
                             ?>
                             <?php
                             if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                echo '<li id="registerLi"><a href="profile.html">Profile</a></li>';
+                                echo '<li id="registerLi"><a href="profile.php">Profile</a></li>';
                             }
                             ?>
                             <?php

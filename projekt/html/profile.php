@@ -1,3 +1,28 @@
+<?php
+include ("../php/Templates/User.php");
+session_start();
+$username=$_SESSION["username"];
+$subbed=User::getIsSubscribed($username);
+$errors=[];
+if(isset($_POST["sub"])){
+    $email=$_POST["email"];
+
+    if(count($errors)===0){
+        User::setEmail($email,$username);
+        User::setIsSubscribed($username);
+        $subbed=User::getIsSubscribed($username);
+    }
+
+}
+if(isset($_POST["unsub"])){
+    User::setIsSubscribed($username);
+    $subbed=User::getIsSubscribed($username);
+}
+
+
+echo $username;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +54,7 @@
   
 </head>
 <body>
+
     <section class="main-profile-hero">
         <h1 class="main-header">Your Profile</h1>
    
@@ -102,7 +128,29 @@
            
             </span>
             <span class="home-span">
-                <a href="../php/newsletter" class="home-anchor">You are currently <b>Subscribed</b> to our newsletter</a>
+                <?php
+                if($subbed===false&&!isset($_POST["change"])){
+                    echo '<span class="home-anchor">You are currently <b>Not Subscribed</b> to our newsletter</span>';
+                    echo '<form method="post"><button  type="submit" name="change">Click here to change that!</button></form>';
+                }
+                if(isset($_POST["change"])){
+                    echo '<form method="post"><div class="input-box">
+                                <input type="email" placeholder="Enter your email" name="email" required>                         
+                            </div>
+                            <button type="submit" name="sub">Subscribe</button>
+                            </form>';
+
+
+                }
+                if($subbed===true){
+                    echo '<span  class="home-anchor">You are currently <b>Subscribed</b> to our newsletter</span>';
+                    echo '<form method="post"><button  type="submit" name="unsub">Click here to change that!</button></form>';
+                }
+
+
+                ?>
+
+
            
             </span>
             
