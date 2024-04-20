@@ -139,7 +139,7 @@ h4 {
 }
 
 #fileInputLabel {
-    display: block;
+    display: inline-block;
     width: fit-content;
     height: 1.4rem;
     background-color: white;
@@ -149,6 +149,19 @@ h4 {
     border: none;
     border-radius: 10px;
     transition:0.3s;
+}
+
+#fileLabel {
+    display: block;
+    text-align: center;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+}
+
+#file-span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #fileInputLabel:hover {
@@ -208,6 +221,23 @@ input[type="date"] {
 
 @media (max-width:640px) {
 
+    #file-span{
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+    }
+    #fileLabel {
+        display: block;
+        text-align: center;
+        padding-bottom: 0.8rem;
+        padding-left: 1rem;
+       margin-top: -1rem;
+       margin-bottom: 1rem;
+    }
+    #fileInputLabel {
+        margin-top: 1rem;
+    }
     h4 {
         margin-right: auto;
         margin-left: auto;

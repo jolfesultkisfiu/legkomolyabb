@@ -248,9 +248,16 @@ session_start();
                             </div>
                             
                             <h4>Event Thumbnail (accepted formats: .jpg, .png, .webp, .jpeg)</h4>
-                            <label for="eventThumbnail" id="fileInputLabel">Browse...</label>
-                            <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail">
-                
+                          
+                            <span id="file-span">
+                                <label for="eventThumbnail" id="fileInputLabel">Browse...</label>
+                                
+                                
+                                <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail">
+                                <label for="eventThumbnail" id="fileLabel">Choose a file...</label>
+
+                            </span>
+                           
                             <label for="eventLocation">Event Location:</label>
                             <input type="text" required name="eventLocation" id="eventLocation" maxlength="128" placeholder="Example: London, Abbey Road 12">
                        
@@ -262,6 +269,16 @@ session_start();
                 </article>
 
              </section>
+             <script>
+    // JavaScript to update label text when file is selected
+    const fileInput = document.getElementById('eventThumbnail');
+    const fileLabel = document.getElementById('fileLabel');
+
+    fileInput.addEventListener('change', () => {
+        const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'Choose a file...';
+        fileLabel.textContent = fileName;
+    });
+</script>
              <script src="../js/paneldisplay.js"></script>
         </main>
     <!--footer starts here-->
