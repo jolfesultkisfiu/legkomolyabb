@@ -4,11 +4,12 @@
         "password": "$2y$10$WcuNcBuu\/lLmaZGbI1MyCu6KGDI0NpZ6Ika.eEzyQ1RZu0SPaWDcS",
         "username": "robi",
         "signedUpEvents": [
-            "5"
+            "5",
+            "2"
         ],
-        "subscribed": true,
+        "subscribed": false,
         "image": "..\/images\/robi431996.png",
-        "email": "gniger@gmail.com"
+        "email": "fuckmail@gmail.com"
     },
     {
         "id": 2,

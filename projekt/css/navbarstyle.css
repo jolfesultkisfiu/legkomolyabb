@@ -123,6 +123,17 @@
     float: right;
 }
 
+
+.loginLi{
+    margin-left: auto !important;
+    float: right !important;
+}
+.registerLi{
+    float: right !important;
+}
+
+
+
 .dropdown-li {
     display: none;
 }

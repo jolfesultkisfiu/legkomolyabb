@@ -62,22 +62,22 @@ session_start();
                 <?php
 
                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                    echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
+                    echo '<li class="loginLi"><a href="logout.php">Log out</a></li>';
                 }
                 ?>
                 <?php
                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                    echo '<li id="registerLi"><a href="profile.php">Profile</a></li>';
+                    echo '<li class="registerLi"><a href="profile.php">Profile</a></li>';
                 }
                 ?>
                 <?php
                 if(!isset($_SESSION["started"])){
-                    echo '<li id="loginLi"><a href="login.php">Log In</a></li>';
+                    echo '<li class="loginLi"><a href="login.php">Log In</a></li>';
                 }
                 ?>
                 <?php
                 if(!isset($_SESSION["started"])){
-                    echo '<li id="registerLi"><a href="register.php">Register</a></li>';
+                    echo '<li class="registerLi"><a href="register.php">Register</a></li>';
                 }
                 ?>
 
@@ -120,22 +120,22 @@ session_start();
                             <?php
 
                             if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                echo '<li id="loginLi"><a href="logout.php">Log out</a></li>';
+                                echo '<li class="loginLi"><a href="logout.php">Log out</a></li>';
                             }
                             ?>
                             <?php
                             if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                echo '<li id="registerLi"><a href="profile.php">Profile</a></li>';
+                                echo '<li class="registerLi"><a href="profile.php">Profile</a></li>';
                             }
                             ?>
                             <?php
                             if(!isset($_SESSION["started"])){
-                                echo '<li id="loginLi"><a href="login.php">Log In</a></li>';
+                                echo '<li class="loginLi"><a href="login.php">Log In</a></li>';
                             }
                             ?>
                             <?php
                             if(!isset($_SESSION["started"])){
-                                echo '<li id="registerLi"><a href="register.php">Register</a></li>';
+                                echo '<li class="registerLi"><a href="register.php">Register</a></li>';
                             }
                             ?>
 

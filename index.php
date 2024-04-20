@@ -3,7 +3,7 @@ session_start();
 include ("projekt/php/Templates/Filter.php");
 $arr=Filter::filter("anytime","any","any","any","");
 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-    echo $_SESSION["started"];
+   // echo $_SESSION["started"];
 }
 
 if(isset($_POST["search"])){
@@ -14,7 +14,7 @@ if(isset($_POST["search"])){
     $music=$_POST["music"];
     $search=$_POST["searched"];
     $arr=Filter::filter($time,$location,$type,$music,$search);
-    print_r($arr);
+   // print_r($arr);
 
 }
 ?>
@@ -84,22 +84,22 @@ if(isset($_POST["search"])){
                     </li>
                     <?php
                     if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                        echo '<li id="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
+                        echo '<li class="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
                     }
                     ?>
                     <?php
                     if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                        echo '<li id="registerLi"><a href="projekt/html/profile.php">Profile</a></li>';
+                        echo '<li class="registerLi"><a href="projekt/html/profile.php">Profile</a></li>';
                     }
                     ?>
                     <?php
                     if(!isset($_SESSION["started"])){
-                        echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
+                        echo '<li class="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
                     }
                     ?>
                     <?php
                     if(!isset($_SESSION["started"])){
-                        echo '<li id="registerLi"><a href="projekt/html/register.php">Register</a></li>';
+                        echo '<li class="registerLi"><a href="projekt/html/register.php">Register</a></li>';
                     }
                     ?>
 
@@ -141,22 +141,22 @@ if(isset($_POST["search"])){
 
                                 <?php
                                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                    echo '<li id="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
+                                    echo '<li class="loginLi"><a href="projekt/html/logout.php">Log out</a></li>';
                                 }
                                 ?>
                                 <?php
                                 if(isset($_SESSION["started"])&&$_SESSION["started"]===true){
-                                    echo '<li id="loginLi"><a href="projekt/html/profile.php">Profile</a></li>';
+                                    echo '<li class="loginLi"><a href="projekt/html/profile.php">Profile</a></li>';
                                 }
                                 ?>
                                 <?php
                                 if(!isset($_SESSION["started"])){
-                                    echo '<li id="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
+                                    echo '<li class="loginLi"><a href="projekt/html/login.php">Log In</a></li>';
                                 }
                                 ?>
                                 <?php
                                 if(!isset($_SESSION["started"])){
-                                    echo '<li id="registerLi"><a href="projekt/html/register.php">Register</a></li>';
+                                    echo '<li class="registerLi"><a href="projekt/html/register.php">Register</a></li>';
                                 }
                                 ?>
 

@@ -159,7 +159,7 @@ if(isset($_POST["unsub"])){
                 <a href="../../index.php" class="home-anchor">Go back to <b>Home</b></a>
            
             </span>
-            <span class="home-span">
+            <div class="home-span">
                 <?php
                 if($subbed===false&&!isset($_POST["change"])){
                     echo '<span class="home-anchor">You are currently <b>Not Subscribed</b> to our newsletter</span>';
@@ -184,7 +184,7 @@ if(isset($_POST["unsub"])){
 
 
            
-            </span>
+            </div>
             
             
             <script>
