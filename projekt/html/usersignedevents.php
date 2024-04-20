@@ -234,7 +234,7 @@ session_start();
                 foreach($decoded["events"] as $key => $value) {
                     $i = 0;
                    // echo $key . "<br>";
-                   if(in_array($key, $signedUpEventsList))
+                   if($signedUpEventsList !== null && in_array($key, $signedUpEventsList))
                    {    
                         foreach($value as $key1 => $value1) {
                             // echo $key . "->>". $value . "<br>";
