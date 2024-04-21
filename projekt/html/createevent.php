@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION["started"])){
+    header("Location: login.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>

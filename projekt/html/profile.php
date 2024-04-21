@@ -1,6 +1,10 @@
 <?php
 include ("../php/Templates/User.php");
 session_start();
+if(!isset($_SESSION["started"])){
+    header("Location: login.php");
+    die();
+}
 $username=$_SESSION["username"];
 $subbed=User::getIsSubscribed($username);
 $errors=[];

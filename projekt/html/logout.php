@@ -5,6 +5,7 @@ if(isset($_SESSION["started"])){
     session_destroy();
 }
 
+
 header("Location: login.php");
 die();
 

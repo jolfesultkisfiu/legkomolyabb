@@ -35,5 +35,14 @@
         "subscribed": false,
         "image": "..\/images\/123.png",
         "email": "@"
+    },
+    {
+        "id": 4,
+        "password": "$2y$10$hX9AB3gd.t22f9Vdt0QwVOcUtrJJPaLxB\/ug1XgV7ofKFzo8EkMXe",
+        "username": "jolfesultkisfiu",
+        "signedUpEvents": null,
+        "subscribed": false,
+        "image": "..\/images\/profile.jpg",
+        "email": "@"
     }
 ]
