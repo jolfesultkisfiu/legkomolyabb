@@ -58,6 +58,35 @@ class User{
     {
         $this->imageSrc = $imageSrc;
     }
+    public static function changePassword($new,$username){
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                $key=array_search($data,$arr);
+                $arr [$key]["password"]=password_hash($new,PASSWORD_DEFAULT);
+                $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static function deleteProfile($username){
+        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $arr=json_decode($content,true)??[];
+        foreach ($arr as $data){
+            if($data["username"]===$username){
+                $key=array_search($data,$arr);
+                unset($arr[$key]);
+                $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                return true;
+                }
+        }
+        return false;
+    }
 
 
     

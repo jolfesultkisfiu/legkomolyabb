@@ -241,6 +241,22 @@ input[type="file"]::file-selector-button {
     color:#fff;
     padding: 20px 45px 20px 20px;
 }
+.center {
+    text-align: center;
+    font-size: 140%;
+}
+.success{
+    margin-top: 10px;
+    color: #43e823;
+    margin-bottom: 10px;
+    font-size: 100%;
+}
+.error {
+    margin-top: 0;
+    color: red;
+    margin-bottom: 10px;
+    font-size: 80%;
+}
 
 .input-box input::placeholder{
     color:#fff;

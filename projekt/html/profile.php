@@ -4,6 +4,7 @@ session_start();
 $username=$_SESSION["username"];
 $subbed=User::getIsSubscribed($username);
 $errors=[];
+$success=false;
 if(isset($_POST["sub"])){
     $email=$_POST["email"];
 
@@ -14,9 +15,41 @@ if(isset($_POST["sub"])){
     }
 
 }
+if(isset($_POST["delete"])){
+    if(User::deleteProfile($username)){
+        header("Location: login.php");
+        die();
+    }
+
+
+}
 if(isset($_POST["unsub"])){
     User::setIsSubscribed($username);
     $subbed=User::getIsSubscribed($username);
+}
+if(isset($_POST["changepassword"])){
+    $old=$_POST["old"];
+    $new=$_POST["new"];
+    $confirm=$_POST["confirm"];
+    if(trim($old)===""){
+        $errors[]="empty old";
+    }
+    if(trim($new)===""){
+        $errors[]="empty new";
+    }
+    if(trim($confirm)===""){
+        $errors[]="empty confim";
+    }
+    if($new!==$confirm){
+        $errors[]="mismatch1";
+    }
+    if(User::login($username,$old)===false){
+        $errors[]="mismatch";
+    }
+    if(count($errors)===0){
+        $success=User::changePassword($new,$username);
+        $errors=[];
+    }
 }
 
 
@@ -110,35 +143,67 @@ if(isset($_POST["unsub"])){
                 </div>
                 <div class="vertical-divide"></div>
                 <div class="profile-data">
-                    <p class="name-paragraph">Your name</p>
+                    <p class="name-paragraph"><?php
+                        echo $username;
+                        ?></p>
                     <p class="inform">If you wish, you can change your password below:</p>
-                    <form action="../php/changePassword.php" method="post">
+                    <form method="post">
 
                         <div>
                             <!-- <label for="oldPassword">Old Password:</label> -->
+                            <?php
+                            if(in_array("empty old",$errors)){
+                                echo '<div class="error center">Üres jelszavat adtál meg</div>';
+                            }
+                            ?>
                             <div class="input-box">
-                                <input type="password" placeholder="Old Password" name="password1" required>
+                                <input type="password" placeholder="Old Password" name="old" required>
                                 <i class='bx bxs-lock-alt'></i>    
                             </div>
                         </div>
+                        <?php
+                        if(in_array("empty new",$errors)){
+                            echo '<div class="error center">Üres jelszavat adtál meg</div>';
+                        }
+                        ?>
                         <div>
                             <!-- <label for="newPassword">New Password:</label> -->
                             <div class="input-box">
-                                <input type="password" placeholder="New Password" name="password1" required>
+                                <input type="password" placeholder="New Password" name="new" required>
                                 <i class='bx bxs-lock-alt'></i>    
                             </div>
                         </div>
+                        <?php
+                        if(in_array("empty confirm",$errors)){
+                            echo '<div class="error center">Üres jelszavat adtál meg</div>';
+                        }
+                        ?>
                         <div>
                             <!-- <label for="confirmPassword">Confirm New Password:</label> -->
                             <div class="input-box">
-                                <input type="password" placeholder="Confirm Password" name="password1" required>
+                                <input type="password" placeholder="Confirm Password" name="confirm" required>
                                 <i class='bx bxs-lock-alt'></i>    
                             </div>
                         </div>
                         <div>
-                            <button type="submit">Change Password</button>
+                            <button type="submit" name="changepassword">Change Password</button>
                         </div>
+                        <?php
+                        if(in_array("mismatch",$errors)){
+                            echo '<div class="error center">Nem ez a jelszavad amit megadtál!</div>';
+                        }
+                        ?>
+                        <?php
+                        if(in_array("mismatch1",$errors)){
+                            echo '<div class="error center">Az új jelszavak nem egyeznek meg!</div>';
+                        }
+                        ?>
                     </form>
+                    <?php
+                    if($success){
+                        echo '<div class="success">Sikeresen megváltoztattad a jelszavadat!</div>';
+                    }
+                    ?>
                 </div>
                
             </div>
@@ -146,9 +211,9 @@ if(isset($_POST["unsub"])){
             <div class="delete-container">
                 <h2>Delete Account</h2>
             
-                <form id="deleteAccountForm" action="delete_account.php" method="post">
+                <form id="deleteAccountForm" method="post">
                     <p>Are you sure you want to delete your account? This action cannot be undone.</p>
-                    <button type="button" class="delete-button" onclick="confirmDelete()">Delete My Account</button>
+                    <button   type="submit" class="delete-button" onclick="confirmDelete()" name="delete">Delete My Account</button>
                 </form>
             </div>
             <div class="horizontal-div"></div>
