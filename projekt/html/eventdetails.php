@@ -160,14 +160,19 @@ session_start();
             // Check if event ID is provided in the URL
             if (isset($_GET['id'])) {
                 $eventId = $_GET['id'];
+                $currentUser = "";
+                if(isset($_SESSION["username"])) {
+                    $currentUser = $_SESSION["username"];
 
-                $currentUser = $_SESSION["username"];
-
+                } 
+              
                 $usersjsondata = file_get_contents("../json/users.json");
                 $usersdecoded = json_decode($usersjsondata,true);
        
                 $foundUser = false;
                 $currentSignedUps = [];
+
+                if($currentUser !== ""){
                foreach($usersdecoded as &$key) {
                  //  var_dump($key);
                    //var_dump($key["signedUpEvents"]);
@@ -185,7 +190,7 @@ session_start();
                    }
        
        
-               }
+               }}
               
 
                 // Retrieve event details based on event ID (e.g., from database or storage)
@@ -219,12 +224,19 @@ session_start();
 
                 if ($event) {
 
-                    if($currentSignedUps !== null && in_array($eventId,$currentSignedUps)) {
-                        echo $event->generateEventDetailsHTMLSignedUp();
-                    }
-                    else {
+                    if($currentUser !== ""){
+                        if($currentSignedUps !== null && in_array($eventId,$currentSignedUps)) {
+                            echo $event->generateEventDetailsHTMLSignedUp();
+                        }
+                        else {
+                            echo $event->generateEventDetailsHTML();
+                        }
+                    } else {
                         echo $event->generateEventDetailsHTML();
+                    
                     }
+
+                  
                     
                 
                     // Display other event details as needed

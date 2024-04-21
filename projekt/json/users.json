@@ -1,16 +1,5 @@
-[
-    {
-        "id": 1,
-        "password": "$2y$10$WcuNcBuu\/lLmaZGbI1MyCu6KGDI0NpZ6Ika.eEzyQ1RZu0SPaWDcS",
-        "username": "robi",
-        "signedUpEvents": [
-            "5"
-        ],
-        "subscribed": false,
-        "image": "..\/images\/robi431996.png",
-        "email": "fuckmail@gmail.com"
-    },
-    {
+{
+    "1": {
         "id": 2,
         "password": "$2y$10$9FyYvyeAC3Fqh72gIyDW\/.zjMx62kRtb0AHQohHCn3iTWFF\/a1Xgq",
         "username": "test",
@@ -21,7 +10,7 @@
         "image": "..\/images\/test.png",
         "email": "@"
     },
-    {
+    "2": {
         "id": 3,
         "password": "$2y$10$xrWpJBgVZg0w6.ruXK5T1eiAtc9.V6zRn\/adZY9xnQJTpJNwE0YL6",
         "username": "123",
@@ -35,7 +24,7 @@
         "image": "..\/images\/123.png",
         "email": "@"
     },
-    {
+    "3": {
         "id": 4,
         "password": "$2y$10$hX9AB3gd.t22f9Vdt0QwVOcUtrJJPaLxB\/ug1XgV7ofKFzo8EkMXe",
         "username": "jolfesultkisfiu",
@@ -46,13 +35,24 @@
         "image": "..\/images\/profile.jpg",
         "email": "jolfesultkisfiu2@yahoo.com"
     },
-    {
+    "4": {
         "id": 5,
         "password": "$2y$10$s6rHG59rJOwr\/UCIy2XLSevqBmhEGOS645h29HLypl84ozSHS5M2O",
         "username": "h270187@stud.u-szeged.hu",
-        "signedUpEvents": null,
+        "signedUpEvents": [
+            "2"
+        ],
         "subscribed": false,
         "image": "..\/images\/h270187@stud.u-szeged.hu.png",
         "email": "@"
+    },
+    "5": {
+        "id": 6,
+        "password": "$2y$10$aOMOu6j6imUg4cBhx82mJurRfI8x8KBnPd9RXy1PUT486BaVUTBym",
+        "username": "robi",
+        "signedUpEvents": null,
+        "subscribed": false,
+        "image": "..\/images\/profile.jpg",
+        "email": "@"
     }
-]
+}
