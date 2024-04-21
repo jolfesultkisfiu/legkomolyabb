@@ -1,39 +1,66 @@
 {
     "events": {
         "2": {
-            "\u0000Event\u0000title": "oh yeahh",
-            "\u0000Event\u0000details": "sex sexx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex,xx sex sexy sex lots of sex furry sex, anal vaganasex sex se",
+            "\u0000Event\u0000title": "SZTE TTIK Freshman Ceremony",
+            "\u0000Event\u0000details": "Lots of fun, dance, music and drinking. Come to TIK and vote for Kolláth István for the king of the ball.",
             "\u0000Event\u0000date": "2024-04-20",
             "\u0000Event\u0000startingTime": "17:35",
-            "\u0000Event\u0000thumbnail": "..\/images\/1.png",
-            "\u0000Event\u0000location": "your mom house",
+            "\u0000Event\u0000thumbnail": "..\/images\/ttik.png",
+            "\u0000Event\u0000location": "Szeged",
             "\u0000Event\u0000numberOfPeopleSignedUp": 26
         },
         "3": {
-            "\u0000Event\u0000title": "headbanging fucking",
-            "\u0000Event\u0000details": "we will fuck and shit and bang and kill and boom boom boom bang shit fuck okay???",
+            "\u0000Event\u0000title": "Big guitar concert",
+            "\u0000Event\u0000details": "We will play some hard rock in our Dorm, where we can be as loud as possible.",
             "\u0000Event\u0000date": "2024-04-20",
             "\u0000Event\u0000startingTime": "14:00",
-            "\u0000Event\u0000thumbnail": "..\/images\/RobertNagyImage.jpg",
-            "\u0000Event\u0000location": "your ip address",
+            "\u0000Event\u0000thumbnail": "..\/images\/guitar.jpg",
+            "\u0000Event\u0000location": "Szeged",
             "\u0000Event\u0000numberOfPeopleSignedUp": 8
         },
         "6": {
-            "\u0000Event\u0000title": "very title",
+            "\u0000Event\u0000title": "Treasure hunting",
             "\u0000Event\u0000details": "we will go on a trip into the backyard and dig a hole and find the buried treasure left on me as heirloom by my great-great-great grandpa who was a real pirate and definitely not just a peasant",
             "\u0000Event\u0000date": "2026-03-04",
             "\u0000Event\u0000startingTime": "00:00",
             "\u0000Event\u0000thumbnail": "..\/images\/5.jpg",
-            "\u0000Event\u0000location": "south park",
+            "\u0000Event\u0000location": "Pécs",
             "\u0000Event\u0000numberOfPeopleSignedUp": 2
         },
         "9": {
-            "\u0000Event\u0000title": "validator",
-            "\u0000Event\u0000details": "please please please get egagijegjsegepgeegeegsesggsegsege",
+            "\u0000Event\u0000title": "Dimat III. practice",
+            "\u0000Event\u0000details": "Please come and practice the Euklides algodirthm in the Bolyai Building!",
             "\u0000Event\u0000date": "2025-05-15",
             "\u0000Event\u0000startingTime": "04:40",
             "\u0000Event\u0000thumbnail": "..\/images\/72020193.png",
-            "\u0000Event\u0000location": "fdhfdf",
+            "\u0000Event\u0000location": "Szeged",
+            "\u0000Event\u0000numberOfPeopleSignedUp": 0
+        },
+        "10": {
+            "\u0000Event\u0000title": "Soccer match",
+            "\u0000Event\u0000details": "Puskás-KTE Division 1 soccer match in the Pancsó Arena, watch the game live!",
+            "\u0000Event\u0000date": "2024-04-26",
+            "\u0000Event\u0000startingTime": "12:15",
+            "\u0000Event\u0000thumbnail": "..\/images\/MTK.jpg",
+            "\u0000Event\u0000location": "Budapest",
+            "\u0000Event\u0000numberOfPeopleSignedUp": 0
+        },
+        "11": {
+            "\u0000Event\u0000title": "SZIN Festival",
+            "\u0000Event\u0000details": "The SZIN Festival is an exciting cultural event that attracts thousands of people annually. This festival celebrates not only theater but also showcases the diversity and richness of the arts. It provides an opportunity for the audience to explore various genres, styles, and performers who dazzle viewers with their innovative and captivating productions.",
+            "\u0000Event\u0000date": "2024-08-26",
+            "\u0000Event\u0000startingTime": "13:03",
+            "\u0000Event\u0000thumbnail": "..\/images\/szin.jpg",
+            "\u0000Event\u0000location": "Szeged",
+            "\u0000Event\u0000numberOfPeopleSignedUp": 0
+        },
+        "12": {
+            "\u0000Event\u0000title": "Boris Brejcha",
+            "\u0000Event\u0000details": "Biggest techno party of the year in Budapest. Every techno loving person should be there. We will be heard from the moon.",
+            "\u0000Event\u0000date": "2024-05-16",
+            "\u0000Event\u0000startingTime": "20:00",
+            "\u0000Event\u0000thumbnail": "..\/images\/11.jpg",
+            "\u0000Event\u0000location": "Budapest",
             "\u0000Event\u0000numberOfPeopleSignedUp": 0
         }
     }

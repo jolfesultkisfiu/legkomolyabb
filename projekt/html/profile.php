@@ -250,10 +250,11 @@ if(isset($_POST["changepassword"])){
 
 
                 ?>
+            </div>
 
 
            
-            </span>
+
             
             
             <script>

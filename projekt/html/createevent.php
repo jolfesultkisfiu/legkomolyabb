@@ -257,7 +257,7 @@ if(!isset($_SESSION["started"])){
                                 <label for="eventThumbnail" id="fileInputLabel">Browse...</label>
                                 
                                 
-                                <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail">
+                                <input type="file" accept=".png, .jpeg, .webp, .jpg" name="eventThumbnail" id="eventThumbnail" required>
                                 <label for="eventThumbnail" id="fileLabel">Choose a file...</label>
 
                             </span>
