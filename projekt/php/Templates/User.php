@@ -14,7 +14,7 @@ class User{
      */
     public static function getEmail($username)
     {
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
@@ -29,14 +29,14 @@ class User{
      */
     public static function setEmail($email,$username)
     {
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
                 $key=array_search($data,$arr);
                 $arr [$key]["email"]=$email;
                 $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                file_put_contents(__DIR__.'/../../json/users.json',$jsonString);
                 return $data["email"];
             }
         }
@@ -59,14 +59,14 @@ class User{
         $this->imageSrc = $imageSrc;
     }
     public static function changePassword($new,$username){
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
                 $key=array_search($data,$arr);
                 $arr [$key]["password"]=password_hash($new,PASSWORD_DEFAULT);
                 $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                file_put_contents(__DIR__.'/../../json/users.json',$jsonString);
                 return true;
             }
         }
@@ -74,14 +74,14 @@ class User{
     }
 
     public static function deleteProfile($username){
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
                 $key=array_search($data,$arr);
                 unset($arr[$key]);
                 $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                file_put_contents(__DIR__.'/../../json/users.json',$jsonString);
                 return true;
                 }
         }
@@ -129,7 +129,7 @@ class User{
     }
     public static function login($username,$password): bool
     {
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username&&password_verify($password,$data["password"])){
@@ -140,7 +140,7 @@ class User{
     }
     public static function usernameTaken($username): bool
     {
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
 
@@ -155,7 +155,7 @@ class User{
     {
 
 
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
 
 
@@ -176,7 +176,7 @@ class User{
         $newUser=new User($id+1,$psw,$name);
         $arr[] = array("id"=>$newUser->ownid,"password"=>$psw,"username"=>$name,"signedUpEvents"=>$newUser->signedUpEvents,"subscribed"=>false,"image"=>$newUser->imageSrc,"email"=>$newUser->email);
         $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-        file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+        file_put_contents(__DIR__.'/../../json/users.json',$jsonString);
 
     }
 
@@ -206,7 +206,7 @@ class User{
     }
 
     public static function getIsSubscribed($username){
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
@@ -218,14 +218,14 @@ class User{
 
 
     public static function setIsSubscribed($username){
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json');
+        $content=file_get_contents(__DIR__.'/../../json/users.json');
         $arr=json_decode($content,true)??[];
         foreach ($arr as $data){
             if($data["username"]===$username){
                 $key=array_search($data,$arr);
                 $arr [$key]["subscribed"]=!$data["subscribed"];
                 $jsonString = json_encode($arr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-                file_put_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\users.json',$jsonString);
+                file_put_contents(__DIR__.'/../../json/users.json',$jsonString);
                 return $data["subscribed"];
             }
         }

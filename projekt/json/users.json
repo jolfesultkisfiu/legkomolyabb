@@ -44,5 +44,14 @@
         "subscribed": false,
         "image": "..\/images\/profile.jpg",
         "email": "@"
+    },
+    {
+        "id": 5,
+        "password": "$2y$10$s6rHG59rJOwr\/UCIy2XLSevqBmhEGOS645h29HLypl84ozSHS5M2O",
+        "username": "h270187@stud.u-szeged.hu",
+        "signedUpEvents": null,
+        "subscribed": false,
+        "image": "..\/images\/h270187@stud.u-szeged.hu.png",
+        "email": "@"
     }
 ]

@@ -5,7 +5,7 @@ class Filter{
 
 
     public static function filter($time,$place,$type,$music,$search){
-        $content=file_get_contents('C:\xampp\htdocs\legkomolyabb\projekt\json\events.json');
+        $content=file_get_contents(__DIR__.'/../../json/events.json');
         $arr=json_decode($content,true)??[];
 
         if($time!=="anytime"){
