@@ -34,6 +34,7 @@ if (isset($_GET["eventId"])) {
             if($key45 !== FALSE) {
                 unset($key["signedUpEvents"][$key45]);
             }
+            break;
         //  $key["signedUpEvents"][] =  $eventId;
         }
 
