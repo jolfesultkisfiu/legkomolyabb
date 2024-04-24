@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $errors=[];
 $success=false;
 if(isset($_POST["sub"])){

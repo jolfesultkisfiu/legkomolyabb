@@ -50,9 +50,22 @@
         "id": 6,
         "password": "$2y$10$aOMOu6j6imUg4cBhx82mJurRfI8x8KBnPd9RXy1PUT486BaVUTBym",
         "username": "robi",
-        "signedUpEvents": null,
-        "subscribed": false,
-        "image": "..\/images\/profile.jpg",
-        "email": "@"
+        "signedUpEvents": [
+            "3",
+            "2",
+            "9"
+        ],
+        "subscribed": true,
+        "image": "..\/images\/robi635300.jpg",
+        "email": "afd@gmail.com"
+    },
+    "6": {
+        "id": 7,
+        "password": "$2y$10$ImGbsm2OOx2P\/ZvHKDo5DuoHB\/nFT1QBK7gAcynXRgnxRb4sIxVtq",
+        "username": "szar",
+        "signedUpEvents": [],
+        "subscribed": true,
+        "image": "..\/images\/szar.jpg",
+        "email": "nigger@nigmail.com"
     }
 }
